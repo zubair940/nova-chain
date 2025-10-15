@@ -23,3 +23,18 @@ A high-performance, decentralized blockchain platform built with Rust featuring 
 - **Consensus:** Proof-of-Work
 - **Database:** JSON-based storage
 - **API:** RESTful HTTP API
+## 🚀 Quick Start
+
+### Prerequisites
+- Rust 1.70+
+- Cargo package manager
+
+### Installation & Running
+
+```bash
+# Clone the repository
+git clone https://github.com/zubair940/nova-chain.git
+cd nova-chain
+
+# Run the blockchain node
+cargo run
