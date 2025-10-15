@@ -15,3 +15,11 @@ A high-performance, decentralized blockchain platform built with Rust featuring 
 - 🔍 **Block Explorer** - Real-time transaction tracking and network statistics
 - 📱 **REST API** - Comprehensive API for blockchain interaction
 - 💰 **Wallet System** - Secure wallets with public/private key cryptography
+## 🛠️ Technology Stack
+
+- **Language:** Rust
+- **Networking:** TCP/IP, Custom P2P Protocol
+- **Cryptography:** SHA-256, ECDSA
+- **Consensus:** Proof-of-Work
+- **Database:** JSON-based storage
+- **API:** RESTful HTTP API
