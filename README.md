@@ -47,3 +47,58 @@ cargo run
 - **Decimals:** 18
 - **Block Reward:** 50 NOC
 - **Consensus:** Proof-of-Work
+## 🔧 API Endpoints
+
+```bash
+# Get blockchain info
+GET http://localhost:3001/chain
+
+# Get wallet balance  
+GET http://localhost:3001/wallet/balance
+
+# Create transaction
+POST http://localhost:3001/transactions/new
+
+# Explore blocks
+GET http://localhost:3001/explorer
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) and feel free to submit Pull Requests.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) and feel free to submit Pull Requests.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+## 📝 Documentation
+
+- [Technical Whitepaper](WHITEPAPER.md)
+- [API Documentation](docs/API.md)
+- [Smart Contract Guide](docs/SMART_CONTRACTS.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
+## 🐛 Bug Reports
+
+If you discover any bugs, please create an [issue](https://github.com/zubair940/nova-chain/issues) and we'll fix it as soon as possible.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Rust community for excellent tools and libraries
+- Bitcoin & Ethereum for blockchain inspiration
+- All contributors who help improve NovaChain
+
+---
+
+**⭐ If you find this project useful, please give it a star on GitHub!**
