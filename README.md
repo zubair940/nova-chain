@@ -39,3 +39,11 @@ cd nova-chain
 # Run the blockchain node
 cargo run
 ## 📁 Project Structure
+## 💰 NOC Token Economics
+
+- **Token Name:** NovaChain Coin
+- **Symbol:** NOC
+- **Total Supply:** 10,000,000
+- **Decimals:** 18
+- **Block Reward:** 50 NOC
+- **Consensus:** Proof-of-Work
