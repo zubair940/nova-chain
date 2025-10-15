@@ -6,3 +6,12 @@
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 A high-performance, decentralized blockchain platform built with Rust featuring Proof-of-Work consensus, P2P networking, smart contracts, and a native NOC token.
+## ✨ Features
+
+- ⚡ **High Performance** - Built with Rust for maximum speed and safety
+- 🔗 **Proof-of-Work Consensus** - Secure and decentralized consensus mechanism
+- 🌐 **P2P Network** - Automatic node discovery and real-time block propagation
+- 💼 **Smart Contracts** - NOC Token standard (similar to ERC-20)
+- 🔍 **Block Explorer** - Real-time transaction tracking and network statistics
+- 📱 **REST API** - Comprehensive API for blockchain interaction
+- 💰 **Wallet System** - Secure wallets with public/private key cryptography
