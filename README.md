@@ -38,3 +38,4 @@ cd nova-chain
 
 # Run the blockchain node
 cargo run
+## 📁 Project Structure
