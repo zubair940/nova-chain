@@ -1,7 +1,7 @@
 # 🚀 NovaChain - High-Performance Blockchain Built with Rust
 
 <p align="center">
-  <img src="https://img.icons8.com/color/96/000000/blockchain-technology.png" alt="Nova Chain Logo" width="100">
+  <img src="images/logo.png" alt="NovaChain Logo" width="200">
 </p>
 
 ![Rust](https://img.shields.io/badge/Rust-1.70+-orange)
