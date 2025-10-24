@@ -49,3 +49,26 @@ cd nova-chain
 cargo run
 
 **⭐ If you find this project useful, please give it a star on GitHub!**
+## 🌐 Live Demo
+
+### 🚀 Live Block Explorer
+**[Click Here to Explore Live Blockchain](https://alayna-colorific-lithically.ngrok-free.dev/explorer)**
+
+### 📊 Live Network Stats
+- **Total Blocks:** 2+
+- **Active Nodes:** 4+ 
+- **Smart Contracts:** 1 Deployed
+- **Staking System:** Active
+
+### 🔗 API Endpoints
+- **Blocks:** `https://alayna-colorific-lithically.ngrok-free.dev/blocks`
+- **Status:** `https://alayna-colorific-lithically.ngrok-free.dev/status`
+- **Wallet Balance:** `https://alayna-colorific-lithically.ngrok-free.dev/wallet/balance`
+
+## 📞 Community & Support
+- **Twitter:** [@NovaChain](https://twitter.com/novachain)
+- **Telegram:** [Join Community](https://t.me/novachain)
+- **Issues:** [GitHub Issues](https://github.com/aubaia940/nova-chain/issues)
+
+---
+*Built with ❤️ and Rust by the Nova Chain Team*
