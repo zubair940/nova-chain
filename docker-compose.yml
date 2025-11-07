@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Node 1 - Main Bootstrap Node
+  novachain-node1:
+    build: .
+    container_name: novachain-node1
+    ports:
+      - "8080:8080"   # P2P Port
+      - "3001:3001"   # API Port
+    command: ["--port", "8080", "--api-port", "3001"]
+    networks:
+      - novachain-net
+
+  # Node 2 - Secondary Node  
+  novachain-node2:
+    build: .
+    container_name: novachain-node2
+    ports:
+      - "8081:8081"   # P2P Port
+      - "3002:3002"   # API Port
+    command: ["--port", "8081", "--api-port", "3002"]
+    networks:
+      - novachain-net
+    depends_on:
+      - novachain-node1
+
+  # Node 3 - Additional Node
+  novachain-node3:
+    build: .
+    container_name: novachain-node3
+    ports:
+      - "8082:8082"   # P2P Port
+      - "3003:3003"   # API Port
+    command: ["--port", "8082", "--api-port", "3003"]
+    networks:
+      - novachain-net
+    depends_on:
+      - novachain-node1
+
+networks:
+  novachain-net:
+    driver: bridge

@@ -1,0 +1,366 @@
+// Gaming NFT Marketplace Contract
+contract GamingNFT {
+    // NFT collection state
+    nfts: map<string, NFT> = {},
+    collections: map<string, Collection> = {},
+    
+    // Marketplace state
+    listings: map<string, Listing> = {},
+    total_volume: uint = 0,
+    platform_fee: uint = 2, // 2% platform fee
+    
+    // NFT structure
+    struct NFT {
+        token_id: string,
+        name: string,
+        description: string,
+        image_url: string,
+        attributes: map<string, string>,
+        owner: address,
+        creator: address,
+        collection_id: string,
+        rarity: string,
+        level: uint = 1,
+        experience: uint = 0,
+        created_at: uint,
+        last_transferred: uint
+    }
+    
+    // Collection structure
+    struct Collection {
+        collection_id: string,
+        name: string,
+        description: string,
+        creator: address,
+        total_supply: uint,
+        minted_count: uint,
+        max_supply: uint,
+        created_at: uint,
+        featured: bool
+    }
+    
+    // Marketplace listing
+    struct Listing {
+        listing_id: string,
+        token_id: string,
+        seller: address,
+        price: uint,
+        created_at: uint,
+        active: bool,
+        auction: bool,
+        auction_end_time: uint,
+        highest_bid: uint,
+        highest_bidder: address
+    }
+    
+    // User inventories
+    user_inventories: map<address, [string]> = {}, // user -> [token_ids]
+    
+    // Create new NFT collection
+    function create_collection(name: string, description: string, max_supply: uint) public -> string {
+        let collection_id = generate_collection_id(name);
+        
+        collections[collection_id] = Collection {
+            collection_id: collection_id,
+            name: name,
+            description: description,
+            creator: msg.sender,
+            total_supply: 0,
+            minted_count: 0,
+            max_supply: max_supply,
+            created_at: now(),
+            featured: false
+        };
+        
+        return collection_id;
+    }
+    
+    // Mint new gaming NFT
+    function mint_nft(collection_id: string, name: string, description: string, image_url: string, attributes: map<string, string>, rarity: string) public -> string {
+        require(collections.contains(collection_id), "Collection not found");
+        
+        let collection = collections[collection_id];
+        require(collection.minted_count < collection.max_supply, "Collection supply reached");
+        
+        let token_id = generate_token_id(collection_id, name);
+        
+        // Create NFT
+        nfts[token_id] = NFT {
+            token_id: token_id,
+            name: name,
+            description: description,
+            image_url: image_url,
+            attributes: attributes,
+            owner: msg.sender,
+            creator: msg.sender,
+            collection_id: collection_id,
+            rarity: rarity,
+            level: 1,
+            experience: 0,
+            created_at: now(),
+            last_transferred: now()
+        };
+        
+        // Update collection
+        collection.minted_count += 1;
+        collection.total_supply += 1;
+        
+        // Add to user inventory
+        if (!user_inventories.contains(msg.sender)) {
+            user_inventories[msg.sender] = [];
+        }
+        user_inventories[msg.sender].push(token_id);
+        
+        return token_id;
+    }
+    
+    // Transfer NFT to another user
+    function transfer_nft(token_id: string, to: address) public {
+        require(nfts.contains(token_id), "NFT not found");
+        require(nfts[token_id].owner == msg.sender, "Not NFT owner");
+        
+        let nft = nfts[token_id];
+        nft.owner = to;
+        nft.last_transferred = now();
+        
+        // Update inventories
+        remove_from_inventory(msg.sender, token_id);
+        
+        if (!user_inventories.contains(to)) {
+            user_inventories[to] = [];
+        }
+        user_inventories[to].push(token_id);
+    }
+    
+    // List NFT for sale
+    function list_nft(token_id: string, price: uint, auction: bool, auction_duration: uint) public -> string {
+        require(nfts.contains(token_id), "NFT not found");
+        require(nfts[token_id].owner == msg.sender, "Not NFT owner");
+        require(price > 0, "Price must be positive");
+        
+        let listing_id = generate_listing_id(token_id);
+        
+        listings[listing_id] = Listing {
+            listing_id: listing_id,
+            token_id: token_id,
+            seller: msg.sender,
+            price: price,
+            created_at: now(),
+            active: true,
+            auction: auction,
+            auction_end_time: auction ? now() + auction_duration : 0,
+            highest_bid: 0,
+            highest_bidder: address(0)
+        };
+        
+        return listing_id;
+    }
+    
+    // Buy NFT (fixed price)
+    function buy_nft(listing_id: string) public payable {
+        require(listings.contains(listing_id), "Listing not found");
+        
+        let listing = listings[listing_id];
+        require(listing.active, "Listing not active");
+        require(!listing.auction, "This is an auction listing");
+        require(msg.value >= listing.price, "Insufficient payment");
+        
+        // Transfer NFT
+        let nft = nfts[listing.token_id];
+        nft.owner = msg.sender;
+        nft.last_transferred = now();
+        
+        // Calculate fees
+        let platform_fee_amount = (listing.price * platform_fee) / 100;
+        let seller_amount = listing.price - platform_fee_amount;
+        
+        // Transfer funds
+        transfer(listing.seller, seller_amount);
+        
+        // Update marketplace stats
+        total_volume += listing.price;
+        
+        // Update inventories
+        remove_from_inventory(listing.seller, listing.token_id);
+        
+        if (!user_inventories.contains(msg.sender)) {
+            user_inventories[msg.sender] = [];
+        }
+        user_inventories[msg.sender].push(listing.token_id);
+        
+        // Close listing
+        listing.active = false;
+    }
+    
+    // Place bid on auction
+    function place_bid(listing_id: string) public payable {
+        require(listings.contains(listing_id), "Listing not found");
+        
+        let listing = listings[listing_id];
+        require(listing.active, "Listing not active");
+        require(listing.auction, "Not an auction listing");
+        require(now() < listing.auction_end_time, "Auction ended");
+        require(msg.value > listing.highest_bid, "Bid too low");
+        
+        // Return previous highest bid
+        if (listing.highest_bidder != address(0)) {
+            transfer(listing.highest_bidder, listing.highest_bid);
+        }
+        
+        // Update highest bid
+        listing.highest_bid = msg.value;
+        listing.highest_bidder = msg.sender;
+    }
+    
+    // Finalize auction
+    function finalize_auction(listing_id: string) public {
+        require(listings.contains(listing_id), "Listing not found");
+        
+        let listing = listings[listing_id];
+        require(listing.active, "Listing not active");
+        require(listing.auction, "Not an auction listing");
+        require(now() >= listing.auction_end_time, "Auction not ended");
+        require(listing.highest_bidder != address(0), "No bids placed");
+        
+        // Transfer NFT
+        let nft = nfts[listing.token_id];
+        nft.owner = listing.highest_bidder;
+        nft.last_transferred = now();
+        
+        // Calculate fees
+        let platform_fee_amount = (listing.highest_bid * platform_fee) / 100;
+        let seller_amount = listing.highest_bid - platform_fee_amount;
+        
+        // Transfer funds
+        transfer(listing.seller, seller_amount);
+        
+        // Update marketplace stats
+        total_volume += listing.highest_bid;
+        
+        // Update inventories
+        remove_from_inventory(listing.seller, listing.token_id);
+        
+        if (!user_inventories.contains(listing.highest_bidder)) {
+            user_inventories[listing.highest_bidder] = [];
+        }
+        user_inventories[listing.highest_bidder].push(listing.token_id);
+        
+        // Close listing
+        listing.active = false;
+    }
+    
+    // Level up NFT (gaming feature)
+    function level_up_nft(token_id: string, experience_points: uint) public {
+        require(nfts.contains(token_id), "NFT not found");
+        require(nfts[token_id].owner == msg.sender, "Not NFT owner");
+        
+        let nft = nfts[token_id];
+        nft.experience += experience_points;
+        
+        // Level up calculation
+        let required_exp = nft.level * 1000;
+        if (nft.experience >= required_exp) {
+            nft.level += 1;
+            nft.experience -= required_exp;
+            
+            // Enhance attributes on level up
+            enhance_attributes(nft);
+        }
+    }
+    
+    // Enhance NFT attributes on level up
+    function enhance_attributes(nft: NFT) private {
+        // Enhance attributes based on rarity
+        let enhancement_factor = get_enhancement_factor(nft.rarity);
+        
+        // Enhance existing attributes
+        for (let attr in nft.attributes) {
+            if (is_numeric_attribute(attr)) {
+                let current_value = string_to_uint(nft.attributes[attr]);
+                let new_value = current_value + (current_value * enhancement_factor) / 100;
+                nft.attributes[attr] = new_value.toString();
+            }
+        }
+        
+        // Add new attributes at certain levels
+        if (nft.level >= 5 && !nft.attributes.contains("special_ability")) {
+            nft.attributes["special_ability"] = "unlocked";
+        }
+        if (nft.level >= 10 && !nft.attributes.contains("ultimate_power")) {
+            nft.attributes["ultimate_power"] = "activated";
+        }
+    }
+    
+    // Get enhancement factor based on rarity
+    function get_enhancement_factor(rarity: string) private -> uint {
+        if (rarity == "legendary") return 20;
+        if (rarity == "epic") return 15;
+        if (rarity == "rare") return 10;
+        if (rarity == "uncommon") return 5;
+        return 2; // common
+    }
+    
+    // Utility functions
+    function remove_from_inventory(user: address, token_id: string) private {
+        if (user_inventories.contains(user)) {
+            let inventory = user_inventories[user];
+            let index = inventory.index_of(token_id);
+            if (index >= 0) {
+                inventory.remove(index);
+            }
+        }
+    }
+    
+    function generate_collection_id(name: string) private -> string {
+        return sha256(name + now().toString() + msg.sender);
+    }
+    
+    function generate_token_id(collection_id: string, name: string) private -> string {
+        return sha256(collection_id + name + now().toString());
+    }
+    
+    function generate_listing_id(token_id: string) private -> string {
+        return sha256(token_id + now().toString());
+    }
+    
+    function is_numeric_attribute(attr: string) private -> bool {
+        return attr.contains("power") || attr.contains("speed") || attr.contains("defense") || attr.contains("health");
+    }
+    
+    function string_to_uint(str: string) private -> uint {
+        // Simple string to uint conversion
+        return uint.parse(str);
+    }
+    
+    // Get user's NFT inventory
+    function get_user_inventory(user: address) public -> [string] {
+        if (user_inventories.contains(user)) {
+            return user_inventories[user];
+        }
+        return [];
+    }
+    
+    // Get NFT details
+    function get_nft_details(token_id: string) public -> (string, string, string, map<string, string>, address, uint, uint) {
+        require(nfts.contains(token_id), "NFT not found");
+        let nft = nfts[token_id];
+        return (nft.name, nft.description, nft.image_url, nft.attributes, nft.owner, nft.level, nft.experience);
+    }
+    
+    // Get marketplace stats
+    function get_marketplace_stats() public -> (uint, uint, uint) {
+        let total_listings = 0;
+        let active_auctions = 0;
+        
+        for (let listing in listings) {
+            if (listing.active) {
+                total_listings += 1;
+                if (listing.auction) {
+                    active_auctions += 1;
+                }
+            }
+        }
+        
+        return (total_volume, total_listings, active_auctions);
+    }
+}

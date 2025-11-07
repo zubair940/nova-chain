@@ -1,0 +1,218 @@
+// AI Prediction Market Contract
+contract AIPrediction {
+    // Prediction market state
+    predictions: map<string, Prediction> = {},
+    ai_model_hash: string = "qwerty12345ai_model_hash",
+    
+    // Market parameters
+    platform_fee: uint = 2, // 2% platform fee
+    min_bet: uint = 1000000, // 1 NOVA minimum bet
+    max_bet: uint = 100000000, // 100 NOVA maximum bet
+    
+    // Prediction structure
+    struct Prediction {
+        question: string,
+        options: [string],
+        votes: map<string, uint> = {},
+        total_pool: uint = 0,
+        resolved: bool = false,
+        correct_option: string = "",
+        creator: address,
+        created_at: uint,
+        resolution_time: uint
+    }
+    
+    // User bets
+    user_bets: map<address, map<string, map<string, uint>>> = {}, // user -> prediction_id -> option -> amount
+    
+    // Create new prediction market
+    function create_prediction(question: string, options: [string], resolution_time: uint) public -> string {
+        require(options.length >= 2, "At least 2 options required");
+        require(resolution_time > now(), "Resolution time must be in future");
+        
+        let pred_id = generate_prediction_id(question);
+        
+        predictions[pred_id] = Prediction {
+            question: question,
+            options: options,
+            votes: map<string, uint>(),
+            total_pool: 0,
+            resolved: false,
+            correct_option: "",
+            creator: msg.sender,
+            created_at: now(),
+            resolution_time: resolution_time
+        };
+        
+        // Initialize votes for each option
+        for (let i = 0; i < options.length; i++) {
+            predictions[pred_id].votes[options[i]] = 0;
+        }
+        
+        return pred_id;
+    }
+    
+    // Place bet on prediction
+    function place_bet(pred_id: string, option: string, amount: uint) public {
+        require(predictions.contains(pred_id), "Prediction not found");
+        require(!predictions[pred_id].resolved, "Prediction already resolved");
+        require(now() < predictions[pred_id].resolution_time, "Betting period ended");
+        require(amount >= min_bet && amount <= max_bet, "Bet amount out of range");
+        
+        let pred = predictions[pred_id];
+        require(pred.options.contains(option), "Invalid option");
+        
+        // Update prediction pool
+        pred.total_pool += amount;
+        pred.votes[option] += amount;
+        
+        // Record user bet
+        if (!user_bets.contains(msg.sender)) {
+            user_bets[msg.sender] = map<string, map<string, uint>>();
+        }
+        if (!user_bets[msg.sender].contains(pred_id)) {
+            user_bets[msg.sender][pred_id] = map<string, uint>();
+        }
+        
+        user_bets[msg.sender][pred_id][option] += amount;
+        
+        // AI analysis trigger (simulated)
+        trigger_ai_analysis(pred_id);
+    }
+    
+    // Resolve prediction with AI assistance
+    function resolve_prediction(pred_id: string, correct_option: string) public {
+        require(predictions.contains(pred_id), "Prediction not found");
+        require(!predictions[pred_id].resolved, "Already resolved");
+        require(now() >= predictions[pred_id].resolution_time, "Resolution time not reached");
+        
+        let pred = predictions[pred_id];
+        require(pred.options.contains(correct_option), "Invalid correct option");
+        
+        // AI verification (simulated)
+        let ai_verified = verify_with_ai(pred_id, correct_option);
+        require(ai_verified, "AI verification failed");
+        
+        pred.resolved = true;
+        pred.correct_option = correct_option;
+        
+        // Distribute winnings
+        distribute_winnings(pred_id, correct_option);
+    }
+    
+    // Distribute winnings to bettors
+    function distribute_winnings(pred_id: string, correct_option: string) private {
+        let pred = predictions[pred_id];
+        let winning_pool = pred.votes[correct_option];
+        
+        if (winning_pool == 0) {
+            return; // No winners
+        }
+        
+        let total_pool_minus_fee = pred.total_pool - ((pred.total_pool * platform_fee) / 100);
+        let multiplier = (total_pool_minus_fee * 10000) / winning_pool; // Precision multiplier
+        
+        // Find all winners and distribute
+        for (let user in user_bets) {
+            if (user_bets[user].contains(pred_id) && user_bets[user][pred_id].contains(correct_option)) {
+                let user_bet = user_bets[user][pred_id][correct_option];
+                let user_winnings = (user_bet * multiplier) / 10000;
+                
+                if (user_winnings > 0) {
+                    transfer(user, user_winnings);
+                }
+            }
+        }
+    }
+    
+    // AI analysis simulation
+    function trigger_ai_analysis(pred_id: string) private {
+        let pred = predictions[pred_id];
+        
+        // Simulate AI processing
+        let analysis_result = ai_analyze(pred.question, pred.options, pred.votes);
+        
+        // Store AI insights (simulated)
+        pred.ai_insights = analysis_result;
+    }
+    
+    // AI verification simulation
+    function verify_with_ai(pred_id: string, proposed_answer: string) private -> bool {
+        let pred = predictions[pred_id];
+        
+        // Simulate AI verification
+        let ai_confidence = calculate_ai_confidence(pred.question, proposed_answer, pred.votes);
+        
+        return ai_confidence > 70; // 70% confidence threshold
+    }
+    
+    // Simulated AI analysis function
+    function ai_analyze(question: string, options: [string], votes: map<string, uint>) private -> string {
+        // This would integrate with actual AI model
+        let total_votes = 0;
+        for (let option in votes) {
+            total_votes += votes[option];
+        }
+        
+        let insights = "AI Analysis: ";
+        for (let i = 0; i < options.length; i++) {
+            let percentage = 0;
+            if (total_votes > 0) {
+                percentage = (votes[options[i]] * 100) / total_votes;
+            }
+            insights += options[i] + ": " + percentage.toString() + "%, ";
+        }
+        
+        return insights;
+    }
+    
+    // Simulated AI confidence calculation
+    function calculate_ai_confidence(question: string, answer: string, votes: map<string, uint>) private -> uint {
+        // Simple confidence calculation based on vote distribution
+        let total_votes = 0;
+        for (let option in votes) {
+            total_votes += votes[option];
+        }
+        
+        if (total_votes == 0) {
+            return 50; // Default confidence
+        }
+        
+        let answer_votes = votes.contains(answer) ? votes[answer] : 0;
+        let confidence = (answer_votes * 100) / total_votes;
+        
+        // Add some AI "magic"
+        if (confidence > 80) {
+            confidence += 10;
+        } else if (confidence < 20) {
+            confidence -= 10;
+        }
+        
+        return min(confidence, 95); // Cap at 95%
+    }
+    
+    // Get prediction details
+    function get_prediction(pred_id: string) public -> (string, [string], map<string, uint>, bool, string) {
+        require(predictions.contains(pred_id), "Prediction not found");
+        let pred = predictions[pred_id];
+        return (pred.question, pred.options, pred.votes, pred.resolved, pred.correct_option);
+    }
+    
+    // Get user's bets
+    function get_user_bets(user: address, pred_id: string) public -> map<string, uint> {
+        if (user_bets.contains(user) && user_bets[user].contains(pred_id)) {
+            return user_bets[user][pred_id];
+        }
+        return map<string, uint>();
+    }
+    
+    // Generate prediction ID
+    function generate_prediction_id(question: string) private -> string {
+        return sha256(question + now().toString() + msg.sender);
+    }
+    
+    // Utility function
+    function min(a: uint, b: uint) private -> uint {
+        return a < b ? a : b;
+    }
+}

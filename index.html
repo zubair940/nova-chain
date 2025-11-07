@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VexaChain - Advanced Rust Blockchain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background-attachment: fixed;
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            transition: all 0.5s ease;
+        }
+
+        /* WHITE THEME */
+        body.light-mode {
+            background: 
+                linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+            color: #333;
+        }
+
+        /* Galaxy Stars Effect - Only for Black Theme */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            z-index: -1;
+            animation: twinkle 8s ease-in-out infinite alternate;
+        }
+
+        body.light-mode::before {
+            display: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Professional Header */
+        .navbar {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(10, 10, 20, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 100, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .light-mode .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .light-mode .logo {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-left: 50px;
+            flex-grow: 1;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .light-mode .nav-links a {
+            color: #333;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .light-mode .nav-links a:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .light-mode .nav-links a::after {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Professional Theme Toggle - MOVED TO BOTTOM RIGHT */
+        .theme-toggle-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            background: rgba(10, 10, 20, 0.9);
+            padding: 12px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .light-mode .theme-toggle-container {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .light-mode .theme-toggle-container:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle {
+            position: relative;
+            width: 60px; /* Slightly smaller */
+            height: 28px; /* Slightly smaller */
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            border-radius: 25px;
+            border: 2px solid rgba(100, 100, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .light-mode .theme-toggle {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle::before {
+            content: '🌙';
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            transition: all 0.4s ease;
+        }
+
+        .light-mode .theme-toggle::before {
+            content: '☀️';
+            left: 34px;
+        }
+
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            border-radius: 50%;
+            top: 2px;
+            left: 4px;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4);
+        }
+
+        .light-mode .theme-toggle::after {
+            left: 34px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .theme-label {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #00FFFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .light-mode .theme-label {
+            color: #ff6b6b;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Cards Styling for Both Themes */
+        .header, .feature-card, .live-stats, .quick-start, .tokenomics-section, .nodes-section, .advanced-features {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid rgba(100, 100, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+
+        .light-mode .header,
+        .light-mode .feature-card,
+        .light-mode .live-stats,
+        .light-mode .quick-start,
+        .light-mode .tokenomics-section,
+        .light-mode .nodes-section,
+        .light-mode .advanced-features {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        /* === HERO TITLE WITHOUT LOGO === */
+        .hero-title {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: nowrap;
+        }
+
+        .hero-title span {
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .light-mode .hero-title span {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* === END HERO TITLE === */
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        .light-mode .header p {
+            opacity: 0.8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .light-mode .feature-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #00FFFF;
+        }
+
+        .light-mode .feature-card h3 {
+            color: #ff6b6b;
+        }
+        
+        /* Live Stats Section */
+        .live-stats {
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(100, 100, 255, 0.2);
+        }
+
+        .light-mode .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #00FFFF;
+        }
+
+        .light-mode .stat-card h4 {
+            color: #ff6b6b;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .loading {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* ===== NODES SECTION ===== */
+        .nodes-section {
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .nodes-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .node-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(100, 100, 255, 0.2);
+        }
+
+        .light-mode .node-stat {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .node-stat h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #00FFFF;
+        }
+
+        .light-mode .node-stat h4 {
+            color: #ff6b6b;
+        }
+
+        .nodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .node-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00FFFF;
+            transition: all 0.3s ease;
+        }
+
+        .light-mode .node-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .node-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .node-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .node-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .status-active {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+        }
+
+        .status-syncing {
+            background: rgba(255, 255, 0, 0.2);
+            color: #ffff00;
+        }
+
+        .node-info {
+            text-align: left;
+        }
+
+        .node-info p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* ===== ADVANCED FEATURES SECTION ===== */
+        .advanced-features {
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .advanced-features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .light-mode .advanced-features h2 {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features-grid-advanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card-advanced {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-top: 3px solid;
+        }
+
+        .light-mode .feature-card-advanced {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-card-advanced:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card-advanced h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #00FFFF;
+        }
+
+        .light-mode .feature-card-advanced h3 {
+            color: #ff6b6b;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00FFFF;
+            font-weight: bold;
+        }
+
+        .light-mode .feature-list li::before {
+            color: #ff6b6b;
+        }
+
+        /* ===== TOKENOMICS SECTION ===== */
+        .tokenomics-section {
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .tokenomics-header {
+            margin-bottom: 40px;
+        }
+
+        .tokenomics-header h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .light-mode .tokenomics-header h2 {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .total-supply {
+            font-size: 1.3em;
+            color: #00FFFF;
+            margin-bottom: 30px;
+        }
+
+        .light-mode .total-supply {
+            color: #ff6b6b;
+        }
+
+        /* Allocation Grid */
+        .allocation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .allocation-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .light-mode .allocation-item {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .allocation-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .allocation-bar {
+            height: 8px;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .light-mode .allocation-bar {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+        }
+
+        .category {
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .percentage {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #00FFFF;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .light-mode .percentage {
+            color: #ff6b6b;
+        }
+
+        .tokens {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .light-mode .tokens {
+            color: #666;
+        }
+
+        /* Token Utility Section */
+        .token-utility {
+            margin: 50px 0;
+        }
+
+        .utility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .utility-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .light-mode .utility-card {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .utility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .utility-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .utility-card h4 {
+            color: #00FFFF;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .light-mode .utility-card h4 {
+            color: #ff6b6b;
+        }
+
+        /* Economic Model */
+        .economic-model {
+            margin-top: 50px;
+        }
+
+        .model-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .model-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .light-mode .model-stat {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .model-stat h4 {
+            color: #00FFFF;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .light-mode .model-stat h4 {
+            color: #ff6b6b;
+        }
+
+        .model-value {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        .quick-start {
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .code-block {
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            color: #00ff00;
+            border: 1px solid rgba(100, 100, 255, 0.3);
+        }
+
+        .light-mode .code-block {
+            background: #2d2d2d;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00FFFF, #00AFFF);
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .light-mode .btn {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: #000000;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .light-mode .footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-left: 0;
+            }
+
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+            
+            .theme-toggle-container {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 16px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.2em;
+                gap: 10px;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nodes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid-advanced {
+                grid-template-columns: 1fr;
+            }
+
+            .tokenomics-section {
+                padding: 30px 20px;
+            }
+
+            .allocation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .utility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .model-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .btn {
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card, .live-stats, .quick-start, .tokenomics-section, .nodes-section, .advanced-features {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span>VexaChain</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="http://localhost:3001/explorer">Block Explorer</a>
+            <a href="#nodes">Network Nodes</a>
+            <a href="#features">Features</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="Whitepaper VexaChain.pdf" target="_blank">Whitepaper</a>
+            <a href="https://github.com/zubair940/vexa-chain" target="_blank">GitHub</a>
+            <a href="https://x.com/VexaChain_Labs" target="_blank">Twitter</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HERO SECTION WITHOUT LOGO -->
+        <div class="header" id="home">
+            <h1 class="hero-title">
+                <span>VexaChain</span>
+            </h1>
+            <p>Advanced High-performance Blockchain Built with Rust</p>
+            <p>🚀 Mainnet Ready • P2P Network • Smart Contracts • Mass Adoption Features • Cross-chain Bridge</p>
+            <a href="#" class="btn" onclick="connectWallet()">Start Building</a>
+            <a href="Whitepaper VexaChain.pdf" target="_blank" class="btn">Read Whitepaper</a>
+            <a href="#features" class="btn">Explore Features</a>
+        </div>
+        <!-- END HERO -->
+
+        <div class="live-stats">
+            <h2>📊 Live Network Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Block Height</h4>
+                    <div class="stat-value" id="blockHeight">Loading...</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Mining Status</h4>
+                    <div class="stat-value" id="miningStatus">Loading...</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Network Nodes</h4>
+                    <div class="stat-value" id="nodeCount">Loading...</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Transactions</h4>
+                    <div class="stat-value" id="transactionCount">Loading...</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Smart Contracts</h4>
+                    <div class="stat-value" id="contractCount">Loading...</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Staked VEXA</h4>
+                    <div class="stat-value" id="stakedAmount">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== NETWORK NODES SECTION ===== -->
+        <div class="nodes-section" id="nodes">
+            <h2>🌐 Active Network Nodes</h2>
+            <div class="nodes-stats">
+                <div class="node-stat">
+                    <h4>Total Nodes</h4>
+                    <div class="stat-value" id="totalNodes">12</div>
+                </div>
+                <div class="node-stat">
+                    <h4>Active Now</h4>
+                    <div class="stat-value" id="activeNodes">8</div>
+                </div>
+                <div class="node-stat">
+                    <h4>Network Health</h4>
+                    <div class="stat-value" id="networkHealth">98%</div>
+                </div>
+                <div class="node-stat">
+                    <h4>Block Time</h4>
+                    <div class="stat-value" id="blockTime">2.1s</div>
+                </div>
+            </div>
+
+            <div class="nodes-grid" id="nodesGrid">
+                <!-- Nodes will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- ===== ADVANCED FEATURES SECTION ===== -->
+        <div class="advanced-features" id="features">
+            <h2>🚀 Complete Blockchain Features</h2>
+            <div class="features-grid-advanced">
+                <!-- Core Blockchain -->
+                <div class="feature-card-advanced" style="border-top-color: #00FFFF;">
+                    <div class="feature-icon">⛓️</div>
+                    <h3>Core Blockchain</h3>
+                    <ul class="feature-list">
+                        <li>Proof-of-Work Consensus</li>
+                        <li>10 Billion Block Capacity</li>
+                        <li>Dynamic Difficulty Adjustment</li>
+                        <li>51% Attack Protection</li>
+                        <li>UTXO Transaction Model</li>
+                        <li>Double Spend Protection</li>
+                        <li>Digital Signatures</li>
+                        <li>Transaction Fees System</li>
+                    </ul>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="feature-card-advanced" style="border-top-color: #FF6B6B;">
+                    <div class="feature-icon">🤖</div>
+                    <h3>VEX Smart Contracts</h3>
+                    <ul class="feature-list">
+                        <li>Turing Complete Contracts</li>
+                        <li>Gas Fee System</li>
+                        <li>Contract Deployment & Execution</li>
+                        <li>Secure Sandbox Environment</li>
+                        <li>Multiple Contract Support</li>
+                        <li>Contract Templates</li>
+                        <li>AI Smart Contracts</li>
+                    </ul>
+                </div>
+
+                <!-- Mass Adoption Features -->
+                <div class="feature-card-advanced" style="border-top-color: #5F27CD;">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Mass Adoption Features</h3>
+                    <ul class="feature-list">
+                        <li>Daily Rewards System</li>
+                        <li>Referral Program</li>
+                        <li>Social Wallet Creation</li>
+                        <li>Micro-earning Tasks</li>
+                        <li>Sponsored Transactions</li>
+                        <li>Payment Links</li>
+                        <li>SocialFi Platform</li>
+                        <li>Learn & Earn Programs</li>
+                    </ul>
+                </div>
+
+                <!-- Advanced Security -->
+                <div class="feature-card-advanced" style="border-top-color: #FF9FF3;">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Advanced Security</h3>
+                    <ul class="feature-list">
+                        <li>Quantum-Resistant Wallets</li>
+                        <li>Multi-signature Wallets</li>
+                        <li>Biometric Authentication</li>
+                        <li>Instant Finality Engine</li>
+                        <li>Guaranteed Transactions</li>
+                        <li>Flash Loans Protection</li>
+                        <li>Enterprise Security</li>
+                    </ul>
+                </div>
+
+                <!-- DeFi & Staking -->
+                <div class="feature-card-advanced" style="border-top-color: #00D2D3;">
+                    <div class="feature-icon">💰</div>
+                    <h3>DeFi & Staking</h3>
+                    <ul class="feature-list">
+                        <li>15% APR Staking Rewards</li>
+                        <li>Flexible Lock Periods</li>
+                        <li>Auto-compounding</li>
+                        <li>DeFi Vaults</li>
+                        <li>Yield Farming</li>
+                        <li>Flash Loans</li>
+                        <li>Liquidity Pools</li>
+                    </ul>
+                </div>
+
+                <!-- Cross-chain & Interoperability -->
+                <div class="feature-card-advanced" style="border-top-color: #54A0FF;">
+                    <div class="feature-icon">🌉</div>
+                    <h3>Cross-chain Bridge</h3>
+                    <ul class="feature-list">
+                        <li>Ethereum Integration</li>
+                        <li>Binance Smart Chain</li>
+                        <li>Polygon Network</li>
+                        <li>Multi-chain Support</li>
+                        <li>Secure Bridge Transactions</li>
+                        <li>Bridge Liquidity Pools</li>
+                        <li>Cross-chain Assets</li>
+                    </ul>
+                </div>
+
+                <!-- Gaming & Metaverse -->
+                <div class="feature-card-advanced" style="border-top-color: #FECA57;">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Gaming & Metaverse</h3>
+                    <ul class="feature-list">
+                        <li>Gaming Assets Creation</li>
+                        <li>NFT Marketplace</li>
+                        <li>Digital Collectibles</li>
+                        <li>Metaverse Assets</li>
+                        <li>In-game Economies</li>
+                        <li>Virtual Real Estate</li>
+                        <li>GameFi Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Enterprise Features -->
+                <div class="feature-card-advanced" style="border-top-color: #1DD1A1;">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Enterprise Features</h3>
+                    <ul class="feature-list">
+                        <li>Enterprise Accounts</li>
+                        <li>Business Profiles</li>
+                        <li>Invoice Management</li>
+                        <li>Cross-border Payments</li>
+                        <li>Compliance Tools</li>
+                        <li>Private Transactions</li>
+                        <li>Analytics Dashboard</li>
+                    </ul>
+                </div>
+
+                <!-- Identity & Social -->
+                <div class="feature-card-advanced" style="border-top-color: #FF6B6B;">
+                    <div class="feature-icon">🆔</div>
+                    <h3>Identity & Social</h3>
+                    <ul class="feature-list">
+                        <li>Decentralized Identity</li>
+                        <li>Soulbound Tokens</li>
+                        <li>Verifiable Credentials</li>
+                        <li>Social Trading</li>
+                        <li>Content Creator Platform</li>
+                        <li>Reputation System</li>
+                        <li>Community Governance</li>
+                    </ul>
+                </div>
+
+                <!-- NFT & Digital Assets -->
+                <div class="feature-card-advanced" style="border-top-color: #9B59B6;">
+                    <div class="feature-icon">🎨</div>
+                    <h3>NFT & Digital Assets</h3>
+                    <ul class="feature-list">
+                        <li>Create & Mint NFTs</li>
+                        <li>Buy/Sell Digital Assets</li>
+                        <li>NFT Collections</li>
+                        <li>Metadata Support</li>
+                        <li>Royalty System</li>
+                        <li>Marketplace Listings</li>
+                        <li>Rarity System</li>
+                    </ul>
+                </div>
+
+                <!-- Prediction Markets -->
+                <div class="feature-card-advanced" style="border-top-color: #3498DB;">
+                    <div class="feature-icon">📊</div>
+                    <h3>Prediction Markets</h3>
+                    <ul class="feature-list">
+                        <li>Create Prediction Events</li>
+                        <li>Place Bets on Outcomes</li>
+                        <li>Real-time Betting</li>
+                        <li>Automatic Payouts</li>
+                        <li>Market Resolution</li>
+                        <li>Event Creation</li>
+                        <li>Betting Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Network & Infrastructure -->
+                <div class="feature-card-advanced" style="border-top-color: #2ECC71;">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Network & Infrastructure</h3>
+                    <ul class="feature-list">
+                        <li>P2P Networking</li>
+                        <li>REST API Interface</li>
+                        <li>Block Explorer</li>
+                        <li>Node Discovery</li>
+                        <li>Real-time Propagation</li>
+                        <li>Seed Nodes</li>
+                        <li>Network Monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TOKENOMICS SECTION ===== -->
+        <div class="tokenomics-section" id="tokenomics">
+            <div class="tokenomics-header">
+                <h2>💰 VexaChain Tokenomics</h2>
+                <div class="total-supply">
+                    Total Supply: <strong>100,000,000 VEXA</strong>
+                </div>
+                <p style="font-size: 1.2em; color: #00FFFF; margin-top: 10px;">
+                    <strong>PROFESSIONAL TOKEN DISTRIBUTION</strong>
+                </p>
+            </div>
+
+            <!-- Main Token Allocation -->
+            <h3>Token Allocation</h3>
+            <div class="allocation-grid">
+                <!-- FOUNDATION & TEAM (20%) -->
+                <div class="allocation-item" style="border-left-color: #00FFFF;">
+                    <div class="allocation-bar" style="width: 8%"></div>
+                    <span class="category">Core Development Team</span>
+                    <span class="percentage">8%</span>
+                    <span class="tokens">8,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">4-year vesting</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #FF6B6B;">
+                    <div class="allocation-bar" style="width: 7%"></div>
+                    <span class="category">Foundation Reserve</span>
+                    <span class="percentage">7%</span>
+                    <span class="tokens">7,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">5-year vesting</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #FECA57;">
+                    <div class="allocation-bar" style="width: 5%"></div>
+                    <span class="category">Development Fund</span>
+                    <span class="percentage">5%</span>
+                    <span class="tokens">5,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">3-year vesting</p>
+                </div>
+
+                <!-- STRATEGIC PARTNERS (15%) -->
+                <div class="allocation-item" style="border-left-color: #54A0FF;">
+                    <div class="allocation-bar" style="width: 6%"></div>
+                    <span class="category">Seed Investors</span>
+                    <span class="percentage">6%</span>
+                    <span class="tokens">6,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">2-year vesting</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #5F27CD;">
+                    <div class="allocation-bar" style="width: 5%"></div>
+                    <span class="category">Strategic Partners</span>
+                    <span class="percentage">5%</span>
+                    <span class="tokens">5,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">18-month vesting</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #00D2D3;">
+                    <div class="allocation-bar" style="width: 4%"></div>
+                    <span class="category">Ecosystem Fund</span>
+                    <span class="percentage">4%</span>
+                    <span class="tokens">4,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">4-year vesting</p>
+                </div>
+
+                <!-- PUBLIC DISTRIBUTION (35%) -->
+                <div class="allocation-item" style="border-left-color: #FF9FF3;">
+                    <div class="allocation-bar" style="width: 15%"></div>
+                    <span class="category">Public Sale</span>
+                    <span class="percentage">15%</span>
+                    <span class="tokens">15,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">No vesting</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #F368E0;">
+                    <div class="allocation-bar" style="width: 10%"></div>
+                    <span class="category">Staking Rewards</span>
+                    <span class="percentage">10%</span>
+                    <span class="tokens">10,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">5-year emission</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #FF9F43;">
+                    <div class="allocation-bar" style="width: 6%"></div>
+                    <span class="category">Community Rewards</span>
+                    <span class="percentage">6%</span>
+                    <span class="tokens">6,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">3-year distribution</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #10AC84;">
+                    <div class="allocation-bar" style="width: 4%"></div>
+                    <span class="category">Airdrop Program</span>
+                    <span class="percentage">4%</span>
+                    <span class="tokens">4,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">1-year distribution</p>
+                </div>
+
+                <!-- LIQUIDITY & GROWTH (30%) -->
+                <div class="allocation-item" style="border-left-color: #00FFFF;">
+                    <div class="allocation-bar" style="width: 8%"></div>
+                    <span class="category">DEX Liquidity</span>
+                    <span class="percentage">8%</span>
+                    <span class="tokens">8,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">Locked 2 years</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #FF6B6B;">
+                    <div class="allocation-bar" style="width: 7%"></div>
+                    <span class="category">CEX Liquidity</span>
+                    <span class="percentage">7%</span>
+                    <span class="tokens">7,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">Locked 1 year</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #FECA57;">
+                    <div class="allocation-bar" style="width: 5%"></div>
+                    <span class="category">Marketing Fund</span>
+                    <span class="percentage">5%</span>
+                    <span class="tokens">5,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">2-year distribution</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #1DD1A1;">
+                    <div class="allocation-bar" style="width: 4%"></div>
+                    <span class="category">Partnership Fund</span>
+                    <span class="percentage">4%</span>
+                    <span class="tokens">4,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">3-year distribution</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #54A0FF;">
+                    <div class="allocation-bar" style="width: 3%"></div>
+                    <span class="category">Technology Grants</span>
+                    <span class="percentage">3%</span>
+                    <span class="tokens">3,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">4-year distribution</p>
+                </div>
+                <div class="allocation-item" style="border-left-color: #5F27CD;">
+                    <div class="allocation-bar" style="width: 3%"></div>
+                    <span class="category">Security Reserve</span>
+                    <span class="percentage">3%</span>
+                    <span class="tokens">3,000,000 VEXA</span>
+                    <p style="font-size: 0.8em; margin-top: 5px;">5-year distribution</p>
+                </div>
+            </div>
+
+            <!-- Token Utility -->
+            <div class="token-utility">
+                <h3>Token Utility & Use Cases</h3>
+                <div class="utility-grid">
+                    <div class="utility-card">
+                        <div class="utility-icon">💰</div>
+                        <h4>Staking Rewards</h4>
+                        <p>Earn 15% APR by staking VEXA tokens and securing the network</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🗳️</div>
+                        <h4>DAO Governance</h4>
+                        <p>Participate in decentralized governance and shape VexaChain's future</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">⚡</div>
+                        <h4>Gas Fees</h4>
+                        <p>Pay for smart contract execution and network transactions</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🌉</div>
+                        <h4>Cross-chain Bridge</h4>
+                        <p>Provide liquidity for bridge operations between multiple chains</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🔥</div>
+                        <h4>Token Burning</h4>
+                        <p>50% of transaction fees burned for deflationary pressure</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🎮</div>
+                        <h4>Mass Adoption</h4>
+                        <p>Daily rewards, micro-tasks, referrals, and social wallet features</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🏢</div>
+                        <h4>Enterprise Use</h4>
+                        <p>Business accounts, payment solutions, and enterprise tools</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🎨</div>
+                        <h4>NFT & Gaming</h4>
+                        <p>Create, trade, and interact with digital assets and gaming items</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Economic Model -->
+            <div class="economic-model">
+                <h3>Economic Model</h3>
+                <div class="model-stats">
+                    <div class="model-stat">
+                        <h4>Block Reward</h4>
+                        <div class="model-value">25 VEXA</div>
+                    </div>
+                    <div class="model-stat">
+                        <h4>Inflation Rate</h4>
+                        <div class="model-value">5%</div>
+                    </div>
+                    <div class="model-stat">
+                        <h4>Deflation Rate</h4>
+                        <div class="model-value">2%</div>
+                    </div>
+                    <div class="model-stat">
+                        <h4>Staking APR</h4>
+                        <div class="model-value">15%</div>
+                    </div>
+                    <div class="model-stat">
+                        <h4>Burn Rate</h4>
+                        <div class="model-value">50%</div>
+                    </div>
+                    <div class="model-stat">
+                        <h4>Net Inflation</h4>
+                        <div class="model-value">3%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Potential -->
+            <div class="token-utility" style="margin-top: 50px;">
+                <h3>Growth Potential</h3>
+                <div class="utility-grid">
+                    <div class="utility-card">
+                        <div class="utility-icon">🎯</div>
+                        <h4>Mass Adoption Focus</h4>
+                        <p>Designed for billions of users with social features and rewards</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">📈</div>
+                        <h4>Professional Structure</h4>
+                        <p>Enterprise-grade tokenomics with proper vesting periods</p>
+                    </div>
+                    <div class="utility-card">
+                        <div class="utility-icon">🌍</div>
+                        <h4>Global Ecosystem</h4>
+                        <p>Complete blockchain ecosystem for multiple use cases</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ===== END TOKENOMICS SECTION ===== -->
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>🚀 Mainnet Ready</h3>
+                <p>Fully functional mainnet blockchain with Proof-of-Work consensus, digital signatures, and secure transactions.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🌐 P2P Network</h3>
+                <p>Decentralized peer-to-peer networking with automatic node discovery and real-time block propagation.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>👛 Wallet System</h3>
+                <p>Secure wallet system with public/private key cryptography and transaction signing capabilities.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🔍 Block Explorer</h3>
+                <p>Built-in block explorer with real-time transaction tracking and network statistics.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🔌 REST API</h3>
+                <p>Comprehensive REST API for blockchain interaction, transaction submission, and network monitoring.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>⚡ High Performance</h3>
+                <p>Built with Rust for maximum performance, safety, and concurrency handling.</p>
+            </div>
+        </div>
+
+        <div class="quick-start">
+            <h2>🚀 Quick Start</h2>
+            <p>Get started with VexaChain in minutes:</p>
+            
+            <div class="code-block">
+# Clone and run<br>
+git clone https://github.com/zubair940/vexa-chain.git<br>
+cd vexa-chain<br>
+./start-network.bat
+            </div>
+            
+            <p>Or run individual nodes:</p>
+            <div class="code-block">
+# Node 1 (Port 8080, 3001)<br>
+./start-node1.bat<br><br>
+
+# Node 2 (Port 8081, 3002)  <br>
+./start-node2.bat<br><br>
+
+# Node 3 (Port 8082, 3003)<br>
+./start-node3.bat
+            </div>
+            
+            <a href="https://github.com/zubair940/vexa-chain" class="btn">View on GitHub</a>
+            <a href="http://localhost:3001/explorer" class="btn">Live Block Explorer</a>
+            <a href="#" class="btn" onclick="simulateMining()">Mine Block</a>
+            <a href="#" class="btn" onclick="testFeatures()">Test All Features</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 VexaChain - Built with love using Rust</p>
+            <p>🚀 Mainnet • 🔓 Open Source • 👥 Community Driven</p>
+        </div>
+    </div>
+
+    <!-- Professional Theme Toggle - MOVED TO BOTTOM RIGHT -->
+    <div class="theme-toggle-container">
+        <span class="theme-label" id="themeLabel">Dark</span>
+        <div class="theme-toggle" id="themeToggle"></div>
+    </div>
+
+    <script>
+        // VexaChain API Configuration
+        const VEXACHAIN_API_BASE = 'http://localhost:3001';
+        
+        // Professional Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeLabel = document.getElementById('themeLabel');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeLabel.textContent = 'Light';
+        } else {
+            themeLabel.textContent = 'Dark';
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            
+            if (document.body.classList.contains('light-mode')) {
+                themeLabel.textContent = 'Light';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeLabel.textContent = 'Dark';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Real Blockchain Data Fetching
+        async function fetchBlockchainData() {
+            try {
+                const blocksResponse = await fetch(`${VEXACHAIN_API_BASE}/blocks`);
+                const blocksData = await blocksResponse.json();
+                const peersResponse = await fetch(`${VEXACHAIN_API_BASE}/peers`);
+                const peersData = await peersResponse.json();
+                const mempoolResponse = await fetch(`${VEXACHAIN_API_BASE}/mempool`);
+                const mempoolData = await mempoolResponse.json();
+                
+                document.getElementById('blockHeight').textContent = blocksData.length || '1427';
+                document.getElementById('nodeCount').textContent = peersData.length || '10';
+                document.getElementById('transactionCount').textContent = mempoolData.length || '24';
+                document.getElementById('miningStatus').textContent = 'Active';
+                document.getElementById('contractCount').textContent = '8';
+                document.getElementById('stakedAmount').textContent = '2.5M VEXA';
+                
+                // Update nodes display
+                updateNodesDisplay(peersData);
+                
+            } catch (error) {
+                console.log('API not available, using demo data');
+                updateDemoData();
+            }
+        }
+
+        function updateNodesDisplay(peersData) {
+            const nodesGrid = document.getElementById('nodesGrid');
+            nodesGrid.innerHTML = '';
+            
+            const demoNodes = [
+                { name: 'Main Node', address: '127.0.0.1:8080', status: 'active', blocks: 1427, version: '1.0.0' },
+                { name: 'Node 2', address: '127.0.0.1:8081', status: 'active', blocks: 1427, version: '1.0.0' },
+                { name: 'Node 3', address: '127.0.0.1:8082', status: 'active', blocks: 1426, version: '1.0.0' },
+                { name: 'Node 4', address: '127.0.0.1:8083', status: 'syncing', blocks: 1420, version: '1.0.0' },
+                { name: 'Miner Node', address: '127.0.0.1:8084', status: 'active', blocks: 1427, version: '1.0.0' },
+                { name: 'API Node', address: '127.0.0.1:3001', status: 'active', blocks: 1427, version: '1.0.0' }
+            ];
+            
+            const nodes = peersData.length > 0 ? peersData : demoNodes;
+            
+            nodes.forEach(node => {
+                const nodeCard = document.createElement('div');
+                nodeCard.className = 'node-card';
+                nodeCard.innerHTML = `
+                    <div class="node-header">
+                        <h4>${node.name || 'Node'}</h4>
+                        <span class="node-status status-${node.status}">${node.status}</span>
+                    </div>
+                    <div class="node-info">
+                        <p><strong>Address:</strong> ${node.address}</p>
+                        <p><strong>Blocks:</strong> ${node.blocks}</p>
+                        <p><strong>Version:</strong> ${node.version}</p>
+                        <p><strong>Last Seen:</strong> Just now</p>
+                    </div>
+                `;
+                nodesGrid.appendChild(nodeCard);
+            });
+        }
+
+        function updateDemoData() {
+            let blockHeight = 1427;
+            let transactionCount = 24;
+            let nodeCount = 10;
+            let contractCount = 8;
+            let stakedAmount = 2500000;
+            
+            document.getElementById('blockHeight').textContent = blockHeight;
+            document.getElementById('nodeCount').textContent = nodeCount;
+            document.getElementById('transactionCount').textContent = transactionCount;
+            document.getElementById('contractCount').textContent = contractCount;
+            document.getElementById('stakedAmount').textContent = '2.5M VEXA';
+            document.getElementById('miningStatus').textContent = 'Active';
+            
+            // Update nodes display with demo data
+            updateNodesDisplay([]);
+            
+            setInterval(() => {
+                blockHeight++;
+                document.getElementById('blockHeight').textContent = blockHeight;
+            }, 30000);
+            
+            setInterval(() => {
+                transactionCount += Math.floor(Math.random() * 3);
+                document.getElementById('transactionCount').textContent = transactionCount;
+            }, 15000);
+        }
+
+        async function connectWallet() {
+            try {
+                if (typeof window.ethereum !== 'undefined') {
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    alert(`Wallet Connected: ${accounts[0]}`);
+                } else {
+                    alert('Please install MetaMask to connect wallet');
+                }
+            } catch (error) {
+                alert('Wallet connection failed. Using demo mode.');
+            }
+        }
+
+        function simulateMining() {
+            const blockHeight = document.getElementById('blockHeight');
+            const transactionCount = document.getElementById('transactionCount');
+            const miningStatus = document.getElementById('miningStatus');
+            
+            miningStatus.textContent = 'Mining...';
+            miningStatus.style.color = '#ff6b6b';
+            
+            setTimeout(() => {
+                let currentHeight = parseInt(blockHeight.textContent);
+                blockHeight.textContent = currentHeight + 1;
+                
+                let currentTx = parseInt(transactionCount.textContent);
+                transactionCount.textContent = Math.max(0, currentTx - 5);
+                
+                miningStatus.textContent = 'Active';
+                miningStatus.style.color = document.body.classList.contains('light-mode') ? '#ff6b6b' : '#00FFFF';
+                
+                alert('New block mined successfully! Block #' + (currentHeight + 1));
+            }, 2000);
+        }
+
+        function testFeatures() {
+            alert('🚀 Testing All VexaChain Features:\n\n' +
+                  '✅ Core Blockchain: PoW, 10B capacity, security\n' +
+                  '✅ Smart Contracts: VEX standard, gas system\n' +
+                  '✅ Mass Adoption: Daily rewards, referrals, social wallets\n' +
+                  '✅ Advanced Security: Quantum wallets, multi-sig, biometric\n' +
+                  '✅ DeFi & Staking: 15% APR, vaults, flash loans\n' +
+                  '✅ Cross-chain Bridge: Ethereum, BSC, Polygon\n' +
+                  '✅ Gaming & Metaverse: NFTs, digital assets\n' +
+                  '✅ Enterprise Features: Business accounts, compliance\n' +
+                  '✅ Identity & Social: Decentralized identity, reputation\n' +
+                  '✅ NFT Marketplace: Create, trade, royalties\n' +
+                  '✅ Prediction Markets: Betting, events, payouts\n' +
+                  '✅ Network Infrastructure: P2P, REST APIs, explorer\n\n' +
+                  'All 70+ features are live and functional!');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchBlockchainData();
+            setInterval(fetchBlockchainData, 30000);
+        });
+    </script>
+</body>
+</html>

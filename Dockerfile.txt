@@ -1,0 +1,41 @@
+# Multi-stage Dockerfile for NovaChain
+FROM rust:1.70 as builder
+
+# Create app directory
+WORKDIR /usr/src/novachain
+
+# Copy source code
+COPY . .
+
+# Build the application
+RUN cargo build --release
+
+# Runtime stage
+FROM debian:bookworm-slim
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create novachain user
+RUN useradd -m -u 1000 novachain
+
+# Switch to novachain user
+USER novachain
+
+# Create app directory
+WORKDIR /home/novachain
+
+# Copy built binary from builder stage
+COPY --from=builder /usr/src/novachain/target/release/novachain-node /usr/local/bin/
+
+# Expose ports
+EXPOSE 8080 3001
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3001/blocks || exit 1
+
+# Start the application
+CMD ["novachain-node", "--port", "8080", "--api-port", "3001"]

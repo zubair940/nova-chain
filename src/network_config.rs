@@ -19,16 +19,17 @@ pub struct NetworkConfig {
 }
 
 impl NetworkConfig {
-    pub fn mainnet() -> Self {
+    pub fn mainnet(port: u16, rpc_port: u16) -> Self {
         NetworkConfig {
             network_type: NetworkType::Mainnet,
-            port: 8080,        // CHANGED: 18080 -> 8080
-            rpc_port: 3001,    // CHANGED: 13001 -> 3001
+            port: port,        // DYNAMIC PORT
+            rpc_port: rpc_port, // DYNAMIC PORT
             bootstrap_nodes: vec![
-                "127.0.0.1:8080".to_string(),   // CHANGED: 18080 -> 8080
+                "127.0.0.1:8080".to_string(),
+                "127.0.0.1:8081".to_string(),
             ],
             genesis_timestamp: 1735765200,
-            block_reward: 25,  // CHANGED: 50 -> 25
+            block_reward: 25,
         }
     }
     
@@ -39,7 +40,7 @@ impl NetworkConfig {
             rpc_port: 13001,
             bootstrap_nodes: vec![
                 "127.0.0.1:18080".to_string(),
-                "testnet.novachain.com:18080".to_string(),
+                "testnet.vexachain.com:18080".to_string(),
             ],
             genesis_timestamp: 1730457600,
             block_reward: 100,
@@ -59,9 +60,9 @@ impl NetworkConfig {
     
     pub fn get_network_id(&self) -> String {
         match self.network_type {
-            NetworkType::Mainnet => "nova-mainnet-v1".to_string(),  // CHANGED
-            NetworkType::Testnet => "nova-testnet-1".to_string(),
-            NetworkType::Devnet => "nova-devnet-1".to_string(),
+            NetworkType::Mainnet => "vexa-mainnet-v1".to_string(),
+            NetworkType::Testnet => "vexa-testnet-1".to_string(),
+            NetworkType::Devnet => "vexa-devnet-1".to_string(),
         }
     }
 }

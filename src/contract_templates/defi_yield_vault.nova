@@ -1,0 +1,115 @@
+// DeFi Yield Farming Vault Contract
+contract YieldVault {
+    // Vault state
+    total_deposits: uint = 0,
+    total_shares: uint = 0,
+    yield_rate: uint = 15, // 15% APY
+    
+    // User balances
+    user_deposits: map<address, uint> = {},
+    user_shares: map<address, uint> = {},
+    
+    // Vault statistics
+    total_yield_generated: uint = 0,
+    last_yield_distribution: uint = now(),
+    
+    // Deposit funds into vault
+    function deposit() public payable {
+        require(msg.value > 0, "Deposit amount must be positive");
+        
+        // Calculate shares based on current ratio
+        let shares = 0;
+        if (total_shares == 0) {
+            shares = msg.value;
+        } else {
+            shares = (msg.value * total_shares) / total_deposits;
+        }
+        
+        // Update user balances
+        user_deposits[msg.sender] += msg.value;
+        user_shares[msg.sender] += shares;
+        
+        // Update vault totals
+        total_deposits += msg.value;
+        total_shares += shares;
+        
+        // Distribute yield if enough time passed
+        distribute_yield();
+    }
+    
+    // Withdraw funds from vault
+    function withdraw(amount: uint) public {
+        require(user_deposits[msg.sender] >= amount, "Insufficient balance");
+        require(amount > 0, "Withdrawal amount must be positive");
+        
+        // Calculate share amount to withdraw
+        let shares_to_withdraw = (amount * user_shares[msg.sender]) / user_deposits[msg.sender];
+        
+        // Calculate yield earned
+        let yield_earned = calculate_user_yield(msg.sender);
+        
+        // Update user balances
+        user_deposits[msg.sender] -= amount;
+        user_shares[msg.sender] -= shares_to_withdraw;
+        
+        // Update vault totals
+        total_deposits -= amount;
+        total_shares -= shares_to_withdraw;
+        
+        // Transfer funds + yield to user
+        let total_to_transfer = amount + yield_earned;
+        transfer(msg.sender, total_to_transfer);
+        
+        // Update yield statistics
+        total_yield_generated += yield_earned;
+    }
+    
+    // Distribute yield to all users
+    function distribute_yield() private {
+        let time_elapsed = now() - last_yield_distribution;
+        if (time_elapsed < 86400) { // 24 hours
+            return;
+        }
+        
+        // Calculate total yield to distribute
+        let daily_rate = yield_rate / 365;
+        let yield_amount = (total_deposits * daily_rate) / 100;
+        
+        // Update total deposits (simulating yield distribution)
+        total_deposits += yield_amount;
+        total_yield_generated += yield_amount;
+        last_yield_distribution = now();
+    }
+    
+    // Calculate user's earned yield
+    function calculate_user_yield(user: address) private -> uint {
+        let user_share = (user_shares[user] * 100) / total_shares;
+        let user_yield = (total_yield_generated * user_share) / 100;
+        return user_yield;
+    }
+    
+    // Get user balance with yield
+    function get_balance_with_yield(user: address) public -> uint {
+        let base_balance = user_deposits[user];
+        let yield_earned = calculate_user_yield(user);
+        return base_balance + yield_earned;
+    }
+    
+    // Get vault statistics
+    function get_vault_stats() public -> (uint, uint, uint) {
+        return (total_deposits, total_yield_generated, yield_rate);
+    }
+    
+    // Emergency shutdown (admin function)
+    function emergency_withdraw() public {
+        let user_balance = get_balance_with_yield(msg.sender);
+        require(user_balance > 0, "No balance to withdraw");
+        
+        // Transfer all user funds
+        transfer(msg.sender, user_balance);
+        
+        // Reset user balances
+        user_deposits[msg.sender] = 0;
+        user_shares[msg.sender] = 0;
+    }
+}

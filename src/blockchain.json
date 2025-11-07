@@ -1,1 +1,82 @@
-{"chain":[{"index":0,"previous_hash":"0","timestamp":1760279452,"transactions":[],"nonce":0,"hash":"1776bab5b709065912e31e39a7e2ce189a3cdff31cd91d7f99d9f36afce7e0b9"},{"index":1,"previous_hash":"1776bab5b709065912e31e39a7e2ce189a3cdff31cd91d7f99d9f36afce7e0b9","timestamp":1760279452,"transactions":[{"sender":"AddressA","receiver":"AddressB","amount":10,"timestamp":1760279452,"signature":"sigA1"},{"sender":"AddressC","receiver":"AddressD","amount":5,"timestamp":1760279452,"signature":"sigC1"}],"nonce":370965,"hash":"000076584ff6dca961d9cee43d0e773c23e44e5c806315df8e5122353a79a509"},{"index":2,"previous_hash":"000076584ff6dca961d9cee43d0e773c23e44e5c806315df8e5122353a79a509","timestamp":1760279473,"transactions":[{"sender":"AddressB","receiver":"AddressE","amount":3,"timestamp":1760279473,"signature":"sigB1"},{"sender":"AddressF","receiver":"AddressA","amount":20,"timestamp":1760279473,"signature":"sigF1"}],"nonce":56875,"hash":"0000cc67e2c4bc7e3b603c3a9b1f7e30268325f8143236794f2cffa2066eacb0"}],"difficulty":4}
+{
+  "chain": [
+    {
+      "index": 0,
+      "previous_hash": "0",
+      "timestamp": 1760279452,
+      "transactions": [],
+      "nonce": 0,
+      "hash": "1776bab5b709065912e31e39a7e2ce189a3cdff31cd91d7f99d9f36afce7e0b9"
+    },
+    {
+      "index": 1,
+      "previous_hash": "1776bab5b709065912e31e39a7e2ce189a3cdff31cd91d7f99d9f36afce7e0b9",
+      "timestamp": 1760279452,
+      "transactions": [
+        {
+          "sender": "AddressA",
+          "receiver": "AddressB",
+          "amount": 10,
+          "timestamp": 1760279452,
+          "signature": "sigA1"
+        },
+        {
+          "sender": "AddressC",
+          "receiver": "AddressD",
+          "amount": 5,
+          "timestamp": 1760279452,
+          "signature": "sigC1"
+        }
+      ],
+      "nonce": 370965,
+      "hash": "000076584ff6dca961d9cee43d0e773c23e44e5c806315df8e5122353a79a509"
+    },
+    {
+      "index": 2,
+      "previous_hash": "000076584ff6dca961d9cee43d0e773c23e44e5c806315df8e5122353a79a509",
+      "timestamp": 1760279473,
+      "transactions": [
+        {
+          "sender": "AddressB",
+          "receiver": "AddressE",
+          "amount": 3,
+          "timestamp": 1760279473,
+          "signature": "sigB1"
+        },
+        {
+          "sender": "AddressF",
+          "receiver": "AddressA",
+          "amount": 20,
+          "timestamp": 1760279473,
+          "signature": "sigF1"
+        }
+      ],
+      "nonce": 56875,
+      "hash": "0000cc67e2c4bc7e3b603c3a9b1f7e30268325f8143236794f2cffa2066eacb0"
+    }
+  ],
+  "difficulty": 4,
+  "utxos": [
+    {
+      "utxo_id": "utxo_manual_A1",
+      "owner": "AddressA",
+      "amount": 10,
+      "spent": false,
+      "created_at": 1760279475
+    },
+    {
+      "utxo_id": "utxo_manual_B1",
+      "owner": "AddressB",
+      "amount": 7,
+      "spent": false,
+      "created_at": 1760279475
+    },
+    {
+      "utxo_id": "utxo_manual_D1",
+      "owner": "AddressD",
+      "amount": 5,
+      "spent": false,
+      "created_at": 1760279475
+    }
+  ]
+}

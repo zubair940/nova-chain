@@ -1,0 +1,3966 @@
+{
+  "chain": [
+    {
+      "index": 0,
+      "timestamp": 1762254691,
+      "transactions": [],
+      "previous_hash": "0",
+      "hash": "aa6120cf1885636bf24a8608d7f6abfc57e0fa5a90a0798acf19ea6b3484d19f",
+      "nonce": 0,
+      "difficulty": 4,
+      "burned_tokens": 0,
+      "dao_proposals": []
+    }
+  ],
+  "difficulty": 4,
+  "balance_tracker": {
+    "balances": {
+      "4E2m9WcuCHgq8QqPdefEbQ2FtUVN": 1010000000000,
+      "Staking_Pool": 120000000000000000,
+      "Development_Fund": 15000000000000000,
+      "Public_Sale": 45000000000000000,
+      "2BpWTDLpvgfrHfAR27UWC8E6mVbp": 1012250000000,
+      "Investors_VC": 48000000000000000,
+      "Core_Development_Team": 24000000000000000,
+      "2dMBi7ZgiRwcqzeGnTYpjtJDXDez": 1010000000000,
+      "Investors_Advisor": 24000000000000000,
+      "2HXsTDLyYf7mEijerq1WeTYDbX64": 1012250000000,
+      "Foundation_Reserve": 21000000000000000,
+      "Community": 120000000000000000,
+      "CEX_Liquidity": 21000000000000000,
+      "2uUAfAbEQLYjszwp7CGMnPjA4QGj": 1012250000000,
+      "2tc45j2WwYZ2PC1pvS72dgAZkyCx": 1010000000000,
+      "4HXuLt34QfxAm4jZvrDxWJM3SuFi": 1010000000000,
+      "37RUZRvKqn96fdqUoQ3ztgBkz4wN": 1012250000000,
+      "3cCkFRKHizhwUKBTDy8PYVuR3sYj": 1010000000000,
+      "NovaFoundation": 180000000000000000,
+      "Staking_Rewards": 30000000000000000,
+      "DevTeam": 240000000000000000,
+      "Investors_Seed": 48000000000000000,
+      "KNDsYmzedNhZ2PqpkJisfH8mgfA": 1010000000000,
+      "uRwfUpXX2rcaRbRNs7cffQVDEG1": 1010000000000,
+      "2RDufaEQqNag8JxACCofKHBkExKe": 1012250000000,
+      "Partnership_Fund": 12000000000000000,
+      "3taGCTN8qTEk2iLC3HfGybouxyTg": 1010000000000,
+      "2DAVsruGWQ7iRq1UhqL88m1M6GEo": 1012250000000,
+      "Community_Rewards": 18000000000000000,
+      "Strategic_Partners": 15000000000000000,
+      "DAO_Treasury": 60000000000000000,
+      "Security_Fund": 60000000000000000,
+      "D3ASLD215nNVZqRcaGgwdASdU5V": 1012250000000,
+      "3VpQxzGpY6dGcs2URW1WZ8Aon4yB": 1010000000000,
+      "4ZraHf4z9Cy5sggER1WeaxTnfbMt": 1064250000000,
+      "3BnBXMNLhPnkKuiNH7XdrU8FXe5": 1012250000000,
+      "Ecosystem_Fund": 12000000000000000,
+      "5UuC7EtSAoNWkXq4oPhYLTCECP7": 1010000000000,
+      "KsdHGMDL6egEuRCCFnxSxaXkH9b": 1010000000000,
+      "3JgBq79BzNDycvQRJEtTaT8nJeFa": 1012250000000,
+      "aRyXmVm8RaP2iLypTqcDgwKQTgd": 1010000000000,
+      "Security_Reserve": 9000000000000000,
+      "Technology_Grants": 9000000000000000,
+      "DEX_Liquidity": 24000000000000000,
+      "tVGTrwhBreAacRDkjPjDQnPQRxY": 1012250000000,
+      "Marketing_Fund": 15000000000000000,
+      "SgKMmDe8BFatexcXAQYYKgpXc6X": 1012250000000,
+      "3xtwec7MRBRzF7FknJXbCiG4wKuG": 1010000000000,
+      "4BRsQHqQ6ptqub1kMwEkUW17ojhU": 1012250000000,
+      "new_user_123": 10000000000,
+      "Seed_Investors": 18000000000000000,
+      "213Q4sXLMSCzG8D9eWXyVuJSSFRm": 1012250000000,
+      "9VfMHfh9NzP4mg3jDyPeiTDgXmf": 1010000000000,
+      "Airdrop_Program": 12000000000000000
+    },
+    "staked_balances": {},
+    "locked_balances": {},
+    "dao_voting_power": {
+      "Staking_Rewards": 30000000000000000,
+      "9VfMHfh9NzP4mg3jDyPeiTDgXmf": 1010000000000,
+      "Partnership_Fund": 12000000000000000,
+      "5UuC7EtSAoNWkXq4oPhYLTCECP7": 1010000000000,
+      "Community_Rewards": 18000000000000000,
+      "4ZraHf4z9Cy5sggER1WeaxTnfbMt": 1064250000000,
+      "Ecosystem_Fund": 12000000000000000,
+      "Core_Development_Team": 24000000000000000,
+      "3cCkFRKHizhwUKBTDy8PYVuR3sYj": 1010000000000,
+      "KsdHGMDL6egEuRCCFnxSxaXkH9b": 1010000000000,
+      "4BRsQHqQ6ptqub1kMwEkUW17ojhU": 1012250000000,
+      "new_user_123": 10000000000,
+      "tVGTrwhBreAacRDkjPjDQnPQRxY": 1012250000000,
+      "213Q4sXLMSCzG8D9eWXyVuJSSFRm": 1012250000000,
+      "Airdrop_Program": 12000000000000000,
+      "DEX_Liquidity": 24000000000000000,
+      "Seed_Investors": 18000000000000000,
+      "Security_Fund": 60000000000000000,
+      "Technology_Grants": 9000000000000000,
+      "Investors_Advisor": 24000000000000000,
+      "D3ASLD215nNVZqRcaGgwdASdU5V": 1012250000000,
+      "2DAVsruGWQ7iRq1UhqL88m1M6GEo": 1012250000000,
+      "Community": 120000000000000000,
+      "Strategic_Partners": 15000000000000000,
+      "SgKMmDe8BFatexcXAQYYKgpXc6X": 1012250000000,
+      "3JgBq79BzNDycvQRJEtTaT8nJeFa": 1012250000000,
+      "2BpWTDLpvgfrHfAR27UWC8E6mVbp": 1012250000000,
+      "Staking_Pool": 120000000000000000,
+      "uRwfUpXX2rcaRbRNs7cffQVDEG1": 1010000000000,
+      "3VpQxzGpY6dGcs2URW1WZ8Aon4yB": 1010000000000,
+      "2tc45j2WwYZ2PC1pvS72dgAZkyCx": 1010000000000,
+      "Foundation_Reserve": 21000000000000000,
+      "4HXuLt34QfxAm4jZvrDxWJM3SuFi": 1010000000000,
+      "DAO_Treasury": 60000000000000000,
+      "Security_Reserve": 9000000000000000,
+      "2uUAfAbEQLYjszwp7CGMnPjA4QGj": 1012250000000,
+      "3xtwec7MRBRzF7FknJXbCiG4wKuG": 1010000000000,
+      "3taGCTN8qTEk2iLC3HfGybouxyTg": 1010000000000,
+      "DevTeam": 240000000000000000,
+      "4E2m9WcuCHgq8QqPdefEbQ2FtUVN": 1010000000000,
+      "3BnBXMNLhPnkKuiNH7XdrU8FXe5": 1012250000000,
+      "37RUZRvKqn96fdqUoQ3ztgBkz4wN": 1012250000000,
+      "Investors_VC": 48000000000000000,
+      "CEX_Liquidity": 21000000000000000,
+      "Marketing_Fund": 15000000000000000,
+      "Investors_Seed": 48000000000000000,
+      "Public_Sale": 45000000000000000,
+      "KNDsYmzedNhZ2PqpkJisfH8mgfA": 1010000000000,
+      "Development_Fund": 15000000000000000,
+      "2dMBi7ZgiRwcqzeGnTYpjtJDXDez": 1010000000000,
+      "2RDufaEQqNag8JxACCofKHBkExKe": 1012250000000,
+      "NovaFoundation": 180000000000000000,
+      "2HXsTDLyYf7mEijerq1WeTYDbX64": 1012250000000,
+      "aRyXmVm8RaP2iLypTqcDgwKQTgd": 1010000000000
+    },
+    "burned_totals": {},
+    "transaction_history": {},
+    "balance_snapshots": {
+      "KNDsYmzedNhZ2PqpkJisfH8mgfA": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        }
+      ],
+      "5UuC7EtSAoNWkXq4oPhYLTCECP7": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "3JgBq79BzNDycvQRJEtTaT8nJeFa": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        }
+      ],
+      "Staking_Pool": [
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 50000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 60000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 70000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 80000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 90000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 100000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 110000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 120000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "2BpWTDLpvgfrHfAR27UWC8E6mVbp": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        }
+      ],
+      "3taGCTN8qTEk2iLC3HfGybouxyTg": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        }
+      ],
+      "DAO_Treasury": [
+        {
+          "balance": 5000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 25000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 35000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 45000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 50000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 55000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 60000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "Partnership_Fund": [
+        {
+          "balance": 4000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "Core_Development_Team": [
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 16000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 24000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "Public_Sale": [
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 45000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "Security_Reserve": [
+        {
+          "balance": 3000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 6000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 9000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "2dMBi7ZgiRwcqzeGnTYpjtJDXDez": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        }
+      ],
+      "Strategic_Partners": [
+        {
+          "balance": 5000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "3xtwec7MRBRzF7FknJXbCiG4wKuG": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        }
+      ],
+      "2uUAfAbEQLYjszwp7CGMnPjA4QGj": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        }
+      ],
+      "Ecosystem_Fund": [
+        {
+          "balance": 4000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "DevTeam": [
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 60000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 80000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 100000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 120000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 140000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 160000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 180000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 200000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 220000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 240000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "3cCkFRKHizhwUKBTDy8PYVuR3sYj": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        }
+      ],
+      "4ZraHf4z9Cy5sggER1WeaxTnfbMt": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 16000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 32100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 64250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 1064250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        }
+      ],
+      "4E2m9WcuCHgq8QqPdefEbQ2FtUVN": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        }
+      ],
+      "SgKMmDe8BFatexcXAQYYKgpXc6X": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "Investors_VC": [
+        {
+          "balance": 4000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 16000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 24000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 28000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 32000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 36000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 44000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 48000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "NovaFoundation": [
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 45000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 60000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 75000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 90000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 105000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 120000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 135000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 150000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 165000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 180000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "213Q4sXLMSCzG8D9eWXyVuJSSFRm": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        }
+      ],
+      "Airdrop_Program": [
+        {
+          "balance": 4000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "uRwfUpXX2rcaRbRNs7cffQVDEG1": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        }
+      ],
+      "Investors_Advisor": [
+        {
+          "balance": 2000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 4000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 6000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 14000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 16000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 18000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 22000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 24000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "Marketing_Fund": [
+        {
+          "balance": 5000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "KsdHGMDL6egEuRCCFnxSxaXkH9b": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        }
+      ],
+      "DEX_Liquidity": [
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 16000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 24000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "D3ASLD215nNVZqRcaGgwdASdU5V": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        }
+      ],
+      "2HXsTDLyYf7mEijerq1WeTYDbX64": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        }
+      ],
+      "Foundation_Reserve": [
+        {
+          "balance": 7000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 14000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 21000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "2RDufaEQqNag8JxACCofKHBkExKe": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        }
+      ],
+      "Investors_Seed": [
+        {
+          "balance": 4000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 8000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 16000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 24000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 28000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 32000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 36000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 44000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 48000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "aRyXmVm8RaP2iLypTqcDgwKQTgd": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        }
+      ],
+      "CEX_Liquidity": [
+        {
+          "balance": 7000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 14000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 21000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "9VfMHfh9NzP4mg3jDyPeiTDgXmf": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "Staking_Rewards": [
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "37RUZRvKqn96fdqUoQ3ztgBkz4wN": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        }
+      ],
+      "3BnBXMNLhPnkKuiNH7XdrU8FXe5": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        }
+      ],
+      "Seed_Investors": [
+        {
+          "balance": 6000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 18000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "Community": [
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 50000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 60000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 70000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 80000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 90000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 100000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 110000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 120000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "3VpQxzGpY6dGcs2URW1WZ8Aon4yB": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        }
+      ],
+      "2tc45j2WwYZ2PC1pvS72dgAZkyCx": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        }
+      ],
+      "Community_Rewards": [
+        {
+          "balance": 6000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 12000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 18000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "4HXuLt34QfxAm4jZvrDxWJM3SuFi": [
+        {
+          "balance": 500000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 1010000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        }
+      ],
+      "2DAVsruGWQ7iRq1UhqL88m1M6GEo": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        }
+      ],
+      "Technology_Grants": [
+        {
+          "balance": 3000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 6000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 9000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "tVGTrwhBreAacRDkjPjDQnPQRxY": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ],
+      "Development_Fund": [
+        {
+          "balance": 5000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762265103,
+          "block_height": 0
+        },
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762356998,
+          "block_height": 0
+        },
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762505962,
+          "block_height": 0
+        }
+      ],
+      "new_user_123": [
+        {
+          "balance": 10000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        }
+      ],
+      "4BRsQHqQ6ptqub1kMwEkUW17ojhU": [
+        {
+          "balance": 1000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 3000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 6100000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 12250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 1012250000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        }
+      ],
+      "Security_Fund": [
+        {
+          "balance": 5000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 10000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762254691,
+          "block_height": 0
+        },
+        {
+          "balance": 15000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255129,
+          "block_height": 0
+        },
+        {
+          "balance": 20000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255137,
+          "block_height": 0
+        },
+        {
+          "balance": 25000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255141,
+          "block_height": 0
+        },
+        {
+          "balance": 30000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255147,
+          "block_height": 0
+        },
+        {
+          "balance": 35000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255151,
+          "block_height": 0
+        },
+        {
+          "balance": 40000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255157,
+          "block_height": 0
+        },
+        {
+          "balance": 45000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255171,
+          "block_height": 0
+        },
+        {
+          "balance": 50000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255360,
+          "block_height": 0
+        },
+        {
+          "balance": 55000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762255409,
+          "block_height": 0
+        },
+        {
+          "balance": 60000000000000000,
+          "staked": 0,
+          "locked": 0,
+          "timestamp": 1762256567,
+          "block_height": 0
+        }
+      ]
+    }
+  },
+  "coin": {
+    "symbol": "NOVA",
+    "name": "NOVA Coin",
+    "total_supply": 100000000000000000,
+    "circulating_supply": 75000000000000000,
+    "decimals": 9,
+    "block_reward": 25000000000,
+    "halving_interval": 1000000,
+    "total_burned": 0,
+    "burn_percentage": 50,
+    "auto_burn_enabled": true,
+    "staking_rewards": 10000000000000000,
+    "dao_treasury": 5000000000000000,
+    "bridge_reserve": 5000000000000000,
+    "security_fund": 5000000000000000,
+    "inflation_rate": 5.0,
+    "deflation_rate": 2.0,
+    "tokenomics": {
+      "allocation": {
+        "DAO_Treasury": 5,
+        "DevTeam": 20,
+        "NovaFoundation": 15,
+        "Investors_Advisor": 2,
+        "Security_Fund": 5,
+        "Mining_Reserve": 25,
+        "Investors_VC": 4,
+        "Investors_Seed": 4,
+        "Staking_Pool": 10,
+        "Community": 10
+      },
+      "vesting_schedule": {},
+      "emission_schedule": {
+        "initial_supply": 75000000000000000,
+        "max_supply": 100000000000000000,
+        "emission_rate": 0.05,
+        "halving_blocks": 1000000,
+        "last_halving": 0
+      },
+      "economic_model": {
+        "model_type": "Hybrid",
+        "stability_mechanism": {
+          "burning": true,
+          "staking": true,
+          "buyback": false,
+          "deflationary_pressure": 2.0
+        },
+        "governance_token": true,
+        "utility_token": true,
+        "security_token": false
+      }
+    },
+    "multi_sig_treasury": {
+      "enabled": true,
+      "required_signatures": 3,
+      "signers": [
+        "DevTeam",
+        "NovaFoundation",
+        "Security_Fund",
+        "DAO_Treasury"
+      ],
+      "pending_approvals": {},
+      "max_withdrawal_limit": 1000000000000000,
+      "daily_withdrawal_limit": 100000000000000
+    },
+    "ai_economic_model": {
+      "enabled": true,
+      "dynamic_inflation_adjustment": true,
+      "predictive_burning": true,
+      "market_sentiment_analysis": true,
+      "auto_risk_management": true,
+      "ai_governance_suggestions": true,
+      "last_ai_adjustment": 0,
+      "adjustment_history": []
+    },
+    "quantum_resistance": {
+      "enabled": true,
+      "kyber512_public_key": "quantum_kyber_public_key_placeholder",
+      "dilithium2_signature": "quantum_dilithium_signature_placeholder",
+      "sphincs_plus_backup": "quantum_sphincs_backup_placeholder",
+      "migration_planned": true,
+      "migration_date": 1743454800
+    },
+    "cross_chain_manager": {
+      "enabled": true,
+      "supported_chains": [
+        {
+          "name": "Ethereum",
+          "chain_id": "1",
+          "bridge_address": "0x742E4C2F4c7c1B3B6b5b5A5c5e5F5",
+          "is_active": true,
+          "total_liquidity": 10000000000000000
+        },
+        {
+          "name": "Binance Smart Chain",
+          "chain_id": "56",
+          "bridge_address": "0x842E4C2F4c7c1B3B6b5b5A5c5e5F5",
+          "is_active": true,
+          "total_liquidity": 8000000000000000
+        },
+        {
+          "name": "Polygon",
+          "chain_id": "137",
+          "bridge_address": "0x942E4C2F4c7c1B3B6b5b5A5c5e5F5",
+          "is_active": true,
+          "total_liquidity": 5000000000000000
+        }
+      ],
+      "bridge_fees": {
+        "base_fee": 100000000,
+        "percentage_fee": 0.001,
+        "min_fee": 50000000,
+        "max_fee": 1000000000
+      },
+      "liquidity_pools": {},
+      "total_bridged_volume": 0
+    },
+    "enterprise_features": {
+      "enabled": true,
+      "private_transactions": true,
+      "kyc_aml_integration": true,
+      "supply_chain_tracking": true,
+      "invoice_payments": true,
+      "compliance_dashboard": true,
+      "enterprise_wallets": []
+    },
+    "mass_adoption_v2": {
+      "enabled": true,
+      "social_login_wallets": true,
+      "gasless_transactions": true,
+      "fiat_on_ramp": true,
+      "recurring_payments": true,
+      "learn_to_earn": true,
+      "interactive_tutorials": true,
+      "total_users": 19,
+      "daily_active_users": 4
+    },
+    "defi_advanced": {
+      "enabled": true,
+      "flash_loans": true,
+      "yield_aggregator": true,
+      "insurance_pools": true,
+      "options_trading": true,
+      "prediction_markets": true,
+      "concentrated_liquidity": true,
+      "impermanent_loss_protection": true,
+      "total_value_locked": 0
+    },
+    "gaming_metaverse": {
+      "enabled": true,
+      "in_game_assets": true,
+      "play_to_earn": true,
+      "cross_game_assets": true,
+      "virtual_land_nfts": true,
+      "avatar_system": true,
+      "virtual_events": true,
+      "gaming_sdk": true,
+      "total_gaming_users": 0
+    }
+  },
+  "contract_manager": {
+    "contracts": {},
+    "templates": {
+      "quantum_safe": {
+        "template_id": "quantum_safe",
+        "name": "Quantum-Safe Contract",
+        "description": "Post-quantum cryptography secured contract",
+        "code": "// Quantum safe template code",
+        "contract_type": "QuantumResistant",
+        "gas_estimate": 60000,
+        "required_balance": 3000000
+      },
+      "ai_prediction": {
+        "template_id": "ai_prediction",
+        "name": "AI Prediction Market",
+        "description": "AI-powered prediction market with machine learning",
+        "code": "// AI prediction template code",
+        "contract_type": "AIContract",
+        "gas_estimate": 100000,
+        "required_balance": 10000000
+      },
+      "gaming_nft": {
+        "template_id": "gaming_nft",
+        "name": "Gaming NFT Asset",
+        "description": "NFT for in-game assets with rarity and levels",
+        "code": "// Gaming NFT template code",
+        "contract_type": "GamingAsset",
+        "gas_estimate": 30000,
+        "required_balance": 2000000
+      },
+      "defi_yield_vault": {
+        "template_id": "defi_yield_vault",
+        "name": "DeFi Yield Farming Vault",
+        "description": "Automated yield farming with 15%+ APR",
+        "code": "// DeFi vault template code",
+        "contract_type": "DeFiVault",
+        "gas_estimate": 75000,
+        "required_balance": 5000000
+      },
+      "multisig_2of3": {
+        "template_id": "multisig_2of3",
+        "name": "2-of-3 Multi-signature Wallet",
+        "description": "Secure multi-signature wallet requiring 2 out of 3 signatures",
+        "code": "// Multi-sig template code",
+        "contract_type": "MultiSig",
+        "gas_estimate": 50000,
+        "required_balance": 1000000
+      }
+    },
+    "total_contracts_deployed": 0,
+    "total_gas_used": 0,
+    "contract_analytics": {
+      "contracts_by_type": {},
+      "average_gas_used": 0.0,
+      "success_rate": 0.0,
+      "most_active_contracts": [],
+      "total_volume": 0
+    },
+    "ai_training_queue": [],
+    "trained_models": {}
+  },
+  "spent_utxos": {},
+  "utxo_set": {
+    "INITIAL_UTXO_W2_1762356998767470601": {
+      "tx_hash": "INITIAL_UTXO_W2_1762356998767470601",
+      "output_index": 0,
+      "address": "3xtwec7MRBRzF7FknJXbCiG4wKuG",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762256567576233000": {
+      "tx_hash": "INITIAL_UTXO_W1_1762256567576233000",
+      "output_index": 0,
+      "address": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255171758309100": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255171758309100",
+      "output_index": 0,
+      "address": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255147871575201": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255147871575201",
+      "output_index": 0,
+      "address": "3taGCTN8qTEk2iLC3HfGybouxyTg",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255147871572700": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255147871572700",
+      "output_index": 0,
+      "address": "2RDufaEQqNag8JxACCofKHBkExKe",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255360529721001": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255360529721001",
+      "output_index": 0,
+      "address": "3cCkFRKHizhwUKBTDy8PYVuR3sYj",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255141467234500": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255141467234500",
+      "output_index": 0,
+      "address": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255129715532000": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255129715532000",
+      "output_index": 0,
+      "address": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255151869936100": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255151869936100",
+      "output_index": 0,
+      "address": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255137557478400": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255137557478400",
+      "output_index": 0,
+      "address": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762265103753459900": {
+      "tx_hash": "INITIAL_UTXO_W1_1762265103753459900",
+      "output_index": 0,
+      "address": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255141467242401": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255141467242401",
+      "output_index": 0,
+      "address": "2dMBi7ZgiRwcqzeGnTYpjtJDXDez",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255360529718300": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255360529718300",
+      "output_index": 0,
+      "address": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255409128207800": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255409128207800",
+      "output_index": 0,
+      "address": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762254691413722801": {
+      "tx_hash": "INITIAL_UTXO_W2_1762254691413722801",
+      "output_index": 0,
+      "address": "4HXuLt34QfxAm4jZvrDxWJM3SuFi",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255137557481701": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255137557481701",
+      "output_index": 0,
+      "address": "aRyXmVm8RaP2iLypTqcDgwKQTgd",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255129715536901": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255129715536901",
+      "output_index": 0,
+      "address": "KsdHGMDL6egEuRCCFnxSxaXkH9b",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255409128212701": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255409128212701",
+      "output_index": 0,
+      "address": "2tc45j2WwYZ2PC1pvS72dgAZkyCx",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255171758311801": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255171758311801",
+      "output_index": 0,
+      "address": "KNDsYmzedNhZ2PqpkJisfH8mgfA",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255151869940101": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255151869940101",
+      "output_index": 0,
+      "address": "4E2m9WcuCHgq8QqPdefEbQ2FtUVN",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762254691413719000": {
+      "tx_hash": "INITIAL_UTXO_W1_1762254691413719000",
+      "output_index": 0,
+      "address": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762356998767467800": {
+      "tx_hash": "INITIAL_UTXO_W1_1762356998767467800",
+      "output_index": 0,
+      "address": "D3ASLD215nNVZqRcaGgwdASdU5V",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762256567576236801": {
+      "tx_hash": "INITIAL_UTXO_W2_1762256567576236801",
+      "output_index": 0,
+      "address": "5UuC7EtSAoNWkXq4oPhYLTCECP7",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762255157902389601": {
+      "tx_hash": "INITIAL_UTXO_W2_1762255157902389601",
+      "output_index": 0,
+      "address": "3VpQxzGpY6dGcs2URW1WZ8Aon4yB",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762265103753464401": {
+      "tx_hash": "INITIAL_UTXO_W2_1762265103753464401",
+      "output_index": 0,
+      "address": "uRwfUpXX2rcaRbRNs7cffQVDEG1",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762505962158318500": {
+      "tx_hash": "INITIAL_UTXO_W1_1762505962158318500",
+      "output_index": 0,
+      "address": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+      "amount": 1000000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W2_1762505962158321101": {
+      "tx_hash": "INITIAL_UTXO_W2_1762505962158321101",
+      "output_index": 0,
+      "address": "9VfMHfh9NzP4mg3jDyPeiTDgXmf",
+      "amount": 500000000000,
+      "spent": false
+    },
+    "INITIAL_UTXO_W1_1762255157902385400": {
+      "tx_hash": "INITIAL_UTXO_W1_1762255157902385400",
+      "output_index": 0,
+      "address": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+      "amount": 1000000000000,
+      "spent": false
+    }
+  },
+  "staking_pool": {
+    "total_staked": 0,
+    "stakers": {},
+    "apr": 15,
+    "min_stake_amount": 100000000000,
+    "lock_period": 2592000,
+    "total_rewards_distributed": 0
+  },
+  "mass_adoption": {
+    "sponsored_transactions": [],
+    "daily_rewards": {
+      "user_rewards": {
+        "2DAVsruGWQ7iRq1UhqL88m1M6GEo": {
+          "last_claim_time": 1762255137,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "3BnBXMNLhPnkKuiNH7XdrU8FXe5": {
+          "last_claim_time": 1762255151,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "2RDufaEQqNag8JxACCofKHBkExKe": {
+          "last_claim_time": 1762255147,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "4ZraHf4z9Cy5sggER1WeaxTnfbMt": {
+          "last_claim_time": 1762254691,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "37RUZRvKqn96fdqUoQ3ztgBkz4wN": {
+          "last_claim_time": 1762255157,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "4BRsQHqQ6ptqub1kMwEkUW17ojhU": {
+          "last_claim_time": 1762255409,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "tVGTrwhBreAacRDkjPjDQnPQRxY": {
+          "last_claim_time": 1762256567,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "2HXsTDLyYf7mEijerq1WeTYDbX64": {
+          "last_claim_time": 1762255360,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "3JgBq79BzNDycvQRJEtTaT8nJeFa": {
+          "last_claim_time": 1762255141,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "213Q4sXLMSCzG8D9eWXyVuJSSFRm": {
+          "last_claim_time": 1762265103,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "SgKMmDe8BFatexcXAQYYKgpXc6X": {
+          "last_claim_time": 1762505962,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "2BpWTDLpvgfrHfAR27UWC8E6mVbp": {
+          "last_claim_time": 1762255171,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "D3ASLD215nNVZqRcaGgwdASdU5V": {
+          "last_claim_time": 1762356998,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        },
+        "2uUAfAbEQLYjszwp7CGMnPjA4QGj": {
+          "last_claim_time": 1762255129,
+          "streak_count": 1,
+          "total_claimed": 1000000000
+        }
+      },
+      "daily_base_reward": 1000000000
+    },
+    "referral_program": {
+      "referrals": {
+        "new_user_123": {
+          "referrer": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+          "referral_date": 1762254691,
+          "earned_amount": 0
+        }
+      },
+      "level_rates": [
+        10,
+        5,
+        2
+      ]
+    },
+    "social_wallets": {
+      "+911234567890": {
+        "phone_number": "+911234567890",
+        "email": "user@email.com",
+        "recovery_code": "618974",
+        "main_address": "social_1762505962124443300"
+      }
+    },
+    "micro_earning": {
+      "tasks": {
+        "survey1": {
+          "task_id": "survey1",
+          "task_type": "survey",
+          "reward_amount": 100000000,
+          "description": "Complete a short survey",
+          "active": true
+        },
+        "refer_friend": {
+          "task_id": "refer_friend",
+          "task_type": "referral",
+          "reward_amount": 1000000000,
+          "description": "Refer a friend to Nova Chain",
+          "active": true
+        },
+        "watch_ad1": {
+          "task_id": "watch_ad1",
+          "task_type": "watch_ad",
+          "reward_amount": 50000000,
+          "description": "Watch a 30-second ad",
+          "active": true
+        }
+      },
+      "completed_tasks": {
+        "4ZraHf4z9Cy5sggER1WeaxTnfbMt": [
+          {
+            "task_id": "survey1",
+            "user_address": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+            "completion_time": 1762254691,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+            "completion_time": 1762254691,
+            "reward_earned": 50000000
+          }
+        ],
+        "tVGTrwhBreAacRDkjPjDQnPQRxY": [
+          {
+            "task_id": "survey1",
+            "user_address": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+            "completion_time": 1762256567,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+            "completion_time": 1762256567,
+            "reward_earned": 50000000
+          }
+        ],
+        "4BRsQHqQ6ptqub1kMwEkUW17ojhU": [
+          {
+            "task_id": "survey1",
+            "user_address": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+            "completion_time": 1762255409,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+            "completion_time": 1762255409,
+            "reward_earned": 50000000
+          }
+        ],
+        "213Q4sXLMSCzG8D9eWXyVuJSSFRm": [
+          {
+            "task_id": "survey1",
+            "user_address": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+            "completion_time": 1762265103,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+            "completion_time": 1762265103,
+            "reward_earned": 50000000
+          }
+        ],
+        "2uUAfAbEQLYjszwp7CGMnPjA4QGj": [
+          {
+            "task_id": "survey1",
+            "user_address": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+            "completion_time": 1762255129,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+            "completion_time": 1762255129,
+            "reward_earned": 50000000
+          }
+        ],
+        "2HXsTDLyYf7mEijerq1WeTYDbX64": [
+          {
+            "task_id": "survey1",
+            "user_address": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+            "completion_time": 1762255360,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+            "completion_time": 1762255360,
+            "reward_earned": 50000000
+          }
+        ],
+        "3JgBq79BzNDycvQRJEtTaT8nJeFa": [
+          {
+            "task_id": "survey1",
+            "user_address": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+            "completion_time": 1762255141,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+            "completion_time": 1762255141,
+            "reward_earned": 50000000
+          }
+        ],
+        "2RDufaEQqNag8JxACCofKHBkExKe": [
+          {
+            "task_id": "survey1",
+            "user_address": "2RDufaEQqNag8JxACCofKHBkExKe",
+            "completion_time": 1762255147,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "2RDufaEQqNag8JxACCofKHBkExKe",
+            "completion_time": 1762255147,
+            "reward_earned": 50000000
+          }
+        ],
+        "D3ASLD215nNVZqRcaGgwdASdU5V": [
+          {
+            "task_id": "survey1",
+            "user_address": "D3ASLD215nNVZqRcaGgwdASdU5V",
+            "completion_time": 1762356998,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "D3ASLD215nNVZqRcaGgwdASdU5V",
+            "completion_time": 1762356998,
+            "reward_earned": 50000000
+          }
+        ],
+        "2DAVsruGWQ7iRq1UhqL88m1M6GEo": [
+          {
+            "task_id": "survey1",
+            "user_address": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+            "completion_time": 1762255137,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+            "completion_time": 1762255137,
+            "reward_earned": 50000000
+          }
+        ],
+        "SgKMmDe8BFatexcXAQYYKgpXc6X": [
+          {
+            "task_id": "survey1",
+            "user_address": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+            "completion_time": 1762505962,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+            "completion_time": 1762505962,
+            "reward_earned": 50000000
+          }
+        ],
+        "37RUZRvKqn96fdqUoQ3ztgBkz4wN": [
+          {
+            "task_id": "survey1",
+            "user_address": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+            "completion_time": 1762255157,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+            "completion_time": 1762255157,
+            "reward_earned": 50000000
+          }
+        ],
+        "3BnBXMNLhPnkKuiNH7XdrU8FXe5": [
+          {
+            "task_id": "survey1",
+            "user_address": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+            "completion_time": 1762255151,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+            "completion_time": 1762255151,
+            "reward_earned": 50000000
+          }
+        ],
+        "2BpWTDLpvgfrHfAR27UWC8E6mVbp": [
+          {
+            "task_id": "survey1",
+            "user_address": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+            "completion_time": 1762255171,
+            "reward_earned": 100000000
+          },
+          {
+            "task_id": "watch_ad1",
+            "user_address": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+            "completion_time": 1762255171,
+            "reward_earned": 50000000
+          }
+        ]
+      }
+    },
+    "fiat_gateway": {
+      "upi_integration": true,
+      "credit_card_support": true,
+      "bank_transfer_support": true,
+      "supported_currencies": [
+        "INR",
+        "USD"
+      ]
+    },
+    "nft_creator": {
+      "user_nfts": {},
+      "marketplace_listings": {}
+    },
+    "prediction_market": {
+      "active_markets": {},
+      "user_bets": {}
+    },
+    "social_pay": {
+      "payment_links": {
+        "pay_tVGTrwhBreAacRDkjPjDQnPQRxY_1762256567576739400": {
+          "link_id": "pay_tVGTrwhBreAacRDkjPjDQnPQRxY_1762256567576739400",
+          "creator": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762256567,
+          "claimed": true,
+          "claimed_by": "5UuC7EtSAoNWkXq4oPhYLTCECP7"
+        },
+        "pay_4ZraHf4z9Cy5sggER1WeaxTnfbMt_1762254691414221200": {
+          "link_id": "pay_4ZraHf4z9Cy5sggER1WeaxTnfbMt_1762254691414221200",
+          "creator": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762254691,
+          "claimed": true,
+          "claimed_by": "4HXuLt34QfxAm4jZvrDxWJM3SuFi"
+        },
+        "pay_3BnBXMNLhPnkKuiNH7XdrU8FXe5_1762255151870482000": {
+          "link_id": "pay_3BnBXMNLhPnkKuiNH7XdrU8FXe5_1762255151870482000",
+          "creator": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255151,
+          "claimed": true,
+          "claimed_by": "4E2m9WcuCHgq8QqPdefEbQ2FtUVN"
+        },
+        "pay_2uUAfAbEQLYjszwp7CGMnPjA4QGj_1762255129689123600": {
+          "link_id": "pay_2uUAfAbEQLYjszwp7CGMnPjA4QGj_1762255129689123600",
+          "creator": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255129,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2HXsTDLyYf7mEijerq1WeTYDbX64_1762255360512698500": {
+          "link_id": "pay_2HXsTDLyYf7mEijerq1WeTYDbX64_1762255360512698500",
+          "creator": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255360,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2BpWTDLpvgfrHfAR27UWC8E6mVbp_1762255171733355300": {
+          "link_id": "pay_2BpWTDLpvgfrHfAR27UWC8E6mVbp_1762255171733355300",
+          "creator": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255171,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_213Q4sXLMSCzG8D9eWXyVuJSSFRm_1762265103753951100": {
+          "link_id": "pay_213Q4sXLMSCzG8D9eWXyVuJSSFRm_1762265103753951100",
+          "creator": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762265103,
+          "claimed": true,
+          "claimed_by": "uRwfUpXX2rcaRbRNs7cffQVDEG1"
+        },
+        "pay_tVGTrwhBreAacRDkjPjDQnPQRxY_1762256567553304700": {
+          "link_id": "pay_tVGTrwhBreAacRDkjPjDQnPQRxY_1762256567553304700",
+          "creator": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762256567,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_37RUZRvKqn96fdqUoQ3ztgBkz4wN_1762255157861673400": {
+          "link_id": "pay_37RUZRvKqn96fdqUoQ3ztgBkz4wN_1762255157861673400",
+          "creator": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255157,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2DAVsruGWQ7iRq1UhqL88m1M6GEo_1762255137561059900": {
+          "link_id": "pay_2DAVsruGWQ7iRq1UhqL88m1M6GEo_1762255137561059900",
+          "creator": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255137,
+          "claimed": true,
+          "claimed_by": "aRyXmVm8RaP2iLypTqcDgwKQTgd"
+        },
+        "pay_37RUZRvKqn96fdqUoQ3ztgBkz4wN_1762255157902889600": {
+          "link_id": "pay_37RUZRvKqn96fdqUoQ3ztgBkz4wN_1762255157902889600",
+          "creator": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255157,
+          "claimed": true,
+          "claimed_by": "3VpQxzGpY6dGcs2URW1WZ8Aon4yB"
+        },
+        "pay_2DAVsruGWQ7iRq1UhqL88m1M6GEo_1762255137526344200": {
+          "link_id": "pay_2DAVsruGWQ7iRq1UhqL88m1M6GEo_1762255137526344200",
+          "creator": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255137,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_4ZraHf4z9Cy5sggER1WeaxTnfbMt_1762254691391178000": {
+          "link_id": "pay_4ZraHf4z9Cy5sggER1WeaxTnfbMt_1762254691391178000",
+          "creator": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762254691,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2BpWTDLpvgfrHfAR27UWC8E6mVbp_1762255171758796600": {
+          "link_id": "pay_2BpWTDLpvgfrHfAR27UWC8E6mVbp_1762255171758796600",
+          "creator": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255171,
+          "claimed": true,
+          "claimed_by": "KNDsYmzedNhZ2PqpkJisfH8mgfA"
+        },
+        "pay_D3ASLD215nNVZqRcaGgwdASdU5V_1762356998741860100": {
+          "link_id": "pay_D3ASLD215nNVZqRcaGgwdASdU5V_1762356998741860100",
+          "creator": "D3ASLD215nNVZqRcaGgwdASdU5V",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762356998,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_4BRsQHqQ6ptqub1kMwEkUW17ojhU_1762255409092659000": {
+          "link_id": "pay_4BRsQHqQ6ptqub1kMwEkUW17ojhU_1762255409092659000",
+          "creator": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255409,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2RDufaEQqNag8JxACCofKHBkExKe_1762255147845687900": {
+          "link_id": "pay_2RDufaEQqNag8JxACCofKHBkExKe_1762255147845687900",
+          "creator": "2RDufaEQqNag8JxACCofKHBkExKe",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255147,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2RDufaEQqNag8JxACCofKHBkExKe_1762255147872062000": {
+          "link_id": "pay_2RDufaEQqNag8JxACCofKHBkExKe_1762255147872062000",
+          "creator": "2RDufaEQqNag8JxACCofKHBkExKe",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255147,
+          "claimed": true,
+          "claimed_by": "3taGCTN8qTEk2iLC3HfGybouxyTg"
+        },
+        "pay_3BnBXMNLhPnkKuiNH7XdrU8FXe5_1762255151841418300": {
+          "link_id": "pay_3BnBXMNLhPnkKuiNH7XdrU8FXe5_1762255151841418300",
+          "creator": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255151,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2uUAfAbEQLYjszwp7CGMnPjA4QGj_1762255129716050500": {
+          "link_id": "pay_2uUAfAbEQLYjszwp7CGMnPjA4QGj_1762255129716050500",
+          "creator": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255129,
+          "claimed": true,
+          "claimed_by": "KsdHGMDL6egEuRCCFnxSxaXkH9b"
+        },
+        "pay_3JgBq79BzNDycvQRJEtTaT8nJeFa_1762255141468081500": {
+          "link_id": "pay_3JgBq79BzNDycvQRJEtTaT8nJeFa_1762255141468081500",
+          "creator": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255141,
+          "claimed": true,
+          "claimed_by": "2dMBi7ZgiRwcqzeGnTYpjtJDXDez"
+        },
+        "pay_D3ASLD215nNVZqRcaGgwdASdU5V_1762356998767930700": {
+          "link_id": "pay_D3ASLD215nNVZqRcaGgwdASdU5V_1762356998767930700",
+          "creator": "D3ASLD215nNVZqRcaGgwdASdU5V",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762356998,
+          "claimed": true,
+          "claimed_by": "3xtwec7MRBRzF7FknJXbCiG4wKuG"
+        },
+        "pay_SgKMmDe8BFatexcXAQYYKgpXc6X_1762505962137909400": {
+          "link_id": "pay_SgKMmDe8BFatexcXAQYYKgpXc6X_1762505962137909400",
+          "creator": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762505962,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_SgKMmDe8BFatexcXAQYYKgpXc6X_1762505962158813000": {
+          "link_id": "pay_SgKMmDe8BFatexcXAQYYKgpXc6X_1762505962158813000",
+          "creator": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762505962,
+          "claimed": true,
+          "claimed_by": "9VfMHfh9NzP4mg3jDyPeiTDgXmf"
+        },
+        "pay_213Q4sXLMSCzG8D9eWXyVuJSSFRm_1762265103727806300": {
+          "link_id": "pay_213Q4sXLMSCzG8D9eWXyVuJSSFRm_1762265103727806300",
+          "creator": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762265103,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_2HXsTDLyYf7mEijerq1WeTYDbX64_1762255360530169300": {
+          "link_id": "pay_2HXsTDLyYf7mEijerq1WeTYDbX64_1762255360530169300",
+          "creator": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255360,
+          "claimed": true,
+          "claimed_by": "3cCkFRKHizhwUKBTDy8PYVuR3sYj"
+        },
+        "pay_3JgBq79BzNDycvQRJEtTaT8nJeFa_1762255141439082300": {
+          "link_id": "pay_3JgBq79BzNDycvQRJEtTaT8nJeFa_1762255141439082300",
+          "creator": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+          "amount": 5000000000,
+          "description": "Test payment",
+          "created_at": 1762255141,
+          "claimed": false,
+          "claimed_by": null
+        },
+        "pay_4BRsQHqQ6ptqub1kMwEkUW17ojhU_1762255409128686000": {
+          "link_id": "pay_4BRsQHqQ6ptqub1kMwEkUW17ojhU_1762255409128686000",
+          "creator": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+          "amount": 10000000000,
+          "description": "Test claim",
+          "created_at": 1762255409,
+          "claimed": true,
+          "claimed_by": "2tc45j2WwYZ2PC1pvS72dgAZkyCx"
+        }
+      },
+      "group_payments": {}
+    },
+    "localization": {
+      "supported_languages": [
+        "en",
+        "hi",
+        "es"
+      ],
+      "user_preferences": {}
+    },
+    "offline_transactions": [],
+    "instant_finality_engine": {
+      "pending_instant_txs": {},
+      "confirmation_time": 500
+    },
+    "guaranteed_transactions": [],
+    "biometric_auth": {
+      "user_biometrics": {},
+      "enabled": false
+    },
+    "voice_commands": {
+      "voice_profiles": {},
+      "supported_commands": []
+    },
+    "business_accounts": {
+      "business_profiles": {},
+      "invoices": {}
+    },
+    "cross_border_pay": {
+      "supported_countries": [],
+      "exchange_rates": {},
+      "pending_transfers": {}
+    },
+    "analytics_dashboard": {
+      "user_analytics": {},
+      "platform_metrics": {
+        "total_users": 0,
+        "daily_active_users": 0,
+        "total_transactions": 0,
+        "total_volume": 0
+      }
+    },
+    "learn_and_earn": {
+      "courses": {},
+      "user_progress": {}
+    },
+    "ai_assistant": {
+      "chat_sessions": {},
+      "ai_model": "nova-gpt"
+    }
+  },
+  "multi_sig_wallets": {
+    "multisig_1762256567560265000": {
+      "address": "multisig_1762256567560265000",
+      "owners": [
+        "tVGTrwhBreAacRDkjPjDQnPQRxY",
+        "5UuC7EtSAoNWkXq4oPhYLTCECP7",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762256567561024200": {
+          "tx_hash": "multisig_tx_1762256567561024200",
+          "from": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762256567,
+          "executed": false
+        }
+      },
+      "created_at": 1762256567
+    },
+    "multisig_1762255151846887800": {
+      "address": "multisig_1762255151846887800",
+      "owners": [
+        "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+        "4E2m9WcuCHgq8QqPdefEbQ2FtUVN",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255151847366900": {
+          "tx_hash": "multisig_tx_1762255151847366900",
+          "from": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255151,
+          "executed": false
+        }
+      },
+      "created_at": 1762255151
+    },
+    "multisig_1762255157885757200": {
+      "address": "multisig_1762255157885757200",
+      "owners": [
+        "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+        "3VpQxzGpY6dGcs2URW1WZ8Aon4yB",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255157886124900": {
+          "tx_hash": "multisig_tx_1762255157886124900",
+          "from": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255157,
+          "executed": false
+        }
+      },
+      "created_at": 1762255157
+    },
+    "multisig_1762255360516079700": {
+      "address": "multisig_1762255360516079700",
+      "owners": [
+        "2HXsTDLyYf7mEijerq1WeTYDbX64",
+        "3cCkFRKHizhwUKBTDy8PYVuR3sYj",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255360516555700": {
+          "tx_hash": "multisig_tx_1762255360516555700",
+          "from": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255360,
+          "executed": false
+        }
+      },
+      "created_at": 1762255360
+    },
+    "multisig_1762255171740000400": {
+      "address": "multisig_1762255171740000400",
+      "owners": [
+        "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+        "KNDsYmzedNhZ2PqpkJisfH8mgfA",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255171740510100": {
+          "tx_hash": "multisig_tx_1762255171740510100",
+          "from": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255171,
+          "executed": false
+        }
+      },
+      "created_at": 1762255171
+    },
+    "multisig_1762255141444586900": {
+      "address": "multisig_1762255141444586900",
+      "owners": [
+        "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+        "2dMBi7ZgiRwcqzeGnTYpjtJDXDez",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255141445085000": {
+          "tx_hash": "multisig_tx_1762255141445085000",
+          "from": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255141,
+          "executed": false
+        }
+      },
+      "created_at": 1762255141
+    },
+    "multisig_1762255129693222800": {
+      "address": "multisig_1762255129693222800",
+      "owners": [
+        "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+        "KsdHGMDL6egEuRCCFnxSxaXkH9b",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255129696620000": {
+          "tx_hash": "multisig_tx_1762255129696620000",
+          "from": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255129,
+          "executed": false
+        }
+      },
+      "created_at": 1762255129
+    },
+    "multisig_1762265103737959200": {
+      "address": "multisig_1762265103737959200",
+      "owners": [
+        "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+        "uRwfUpXX2rcaRbRNs7cffQVDEG1",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762265103738550500": {
+          "tx_hash": "multisig_tx_1762265103738550500",
+          "from": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762265103,
+          "executed": false
+        }
+      },
+      "created_at": 1762265103
+    },
+    "multisig_1762505962142028800": {
+      "address": "multisig_1762505962142028800",
+      "owners": [
+        "SgKMmDe8BFatexcXAQYYKgpXc6X",
+        "9VfMHfh9NzP4mg3jDyPeiTDgXmf",
+        "VexaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762505962142540100": {
+          "tx_hash": "multisig_tx_1762505962142540100",
+          "from": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762505962,
+          "executed": false
+        }
+      },
+      "created_at": 1762505962
+    },
+    "multisig_1762255409113573100": {
+      "address": "multisig_1762255409113573100",
+      "owners": [
+        "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+        "2tc45j2WwYZ2PC1pvS72dgAZkyCx",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255409114783900": {
+          "tx_hash": "multisig_tx_1762255409114783900",
+          "from": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255409,
+          "executed": false
+        }
+      },
+      "created_at": 1762255409
+    },
+    "multisig_1762356998750491000": {
+      "address": "multisig_1762356998750491000",
+      "owners": [
+        "D3ASLD215nNVZqRcaGgwdASdU5V",
+        "3xtwec7MRBRzF7FknJXbCiG4wKuG",
+        "VexaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762356998751014700": {
+          "tx_hash": "multisig_tx_1762356998751014700",
+          "from": "D3ASLD215nNVZqRcaGgwdASdU5V",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762356998,
+          "executed": false
+        }
+      },
+      "created_at": 1762356998
+    },
+    "multisig_1762254691396462200": {
+      "address": "multisig_1762254691396462200",
+      "owners": [
+        "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+        "4HXuLt34QfxAm4jZvrDxWJM3SuFi",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762254691396928300": {
+          "tx_hash": "multisig_tx_1762254691396928300",
+          "from": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762254691,
+          "executed": false
+        }
+      },
+      "created_at": 1762254691
+    },
+    "multisig_1762255137537376500": {
+      "address": "multisig_1762255137537376500",
+      "owners": [
+        "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+        "aRyXmVm8RaP2iLypTqcDgwKQTgd",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255137537874900": {
+          "tx_hash": "multisig_tx_1762255137537874900",
+          "from": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255137,
+          "executed": false
+        }
+      },
+      "created_at": 1762255137
+    },
+    "multisig_1762255147853302400": {
+      "address": "multisig_1762255147853302400",
+      "owners": [
+        "2RDufaEQqNag8JxACCofKHBkExKe",
+        "3taGCTN8qTEk2iLC3HfGybouxyTg",
+        "NovaFoundation"
+      ],
+      "required_signatures": 2,
+      "pending_transactions": {
+        "multisig_tx_1762255147853776700": {
+          "tx_hash": "multisig_tx_1762255147853776700",
+          "from": "2RDufaEQqNag8JxACCofKHBkExKe",
+          "to": "recipient",
+          "amount": 100000000000,
+          "signatures": [],
+          "created_at": 1762255147,
+          "executed": false
+        }
+      },
+      "created_at": 1762255147
+    }
+  },
+  "flash_loans": {},
+  "quantum_wallets": {
+    "quantum_1762356998754018000": {
+      "address": "quantum_1762356998754018000",
+      "kyber512_public_key": "kyber512_pk_1762356998754021200",
+      "dilithium2_signature": "dilithium2_sig_1762356998754021900",
+      "sphincs_plus_backup": "sphincs_plus_1762356998754022600",
+      "created_at": 1762356998
+    },
+    "quantum_1762256567563819400": {
+      "address": "quantum_1762256567563819400",
+      "kyber512_public_key": "kyber512_pk_1762256567563823800",
+      "dilithium2_signature": "dilithium2_sig_1762256567563824600",
+      "sphincs_plus_backup": "sphincs_plus_1762256567563825600",
+      "created_at": 1762256567
+    },
+    "quantum_1762505962144536100": {
+      "address": "quantum_1762505962144536100",
+      "kyber512_public_key": "kyber512_pk_1762505962144538300",
+      "dilithium2_signature": "dilithium2_sig_1762505962144538800",
+      "sphincs_plus_backup": "sphincs_plus_1762505962144539300",
+      "created_at": 1762505962
+    },
+    "quantum_1762255157888052800": {
+      "address": "quantum_1762255157888052800",
+      "kyber512_public_key": "kyber512_pk_1762255157888055600",
+      "dilithium2_signature": "dilithium2_sig_1762255157888056300",
+      "sphincs_plus_backup": "sphincs_plus_1762255157888057000",
+      "created_at": 1762255157
+    },
+    "quantum_1762255409117152500": {
+      "address": "quantum_1762255409117152500",
+      "kyber512_public_key": "kyber512_pk_1762255409117155100",
+      "dilithium2_signature": "dilithium2_sig_1762255409117155900",
+      "sphincs_plus_backup": "sphincs_plus_1762255409117156400",
+      "created_at": 1762255409
+    },
+    "quantum_1762255129700888000": {
+      "address": "quantum_1762255129700888000",
+      "kyber512_public_key": "kyber512_pk_1762255129700891000",
+      "dilithium2_signature": "dilithium2_sig_1762255129700891700",
+      "sphincs_plus_backup": "sphincs_plus_1762255129700892400",
+      "created_at": 1762255129
+    },
+    "quantum_1762265103740706000": {
+      "address": "quantum_1762265103740706000",
+      "kyber512_public_key": "kyber512_pk_1762265103740708700",
+      "dilithium2_signature": "dilithium2_sig_1762265103740709300",
+      "sphincs_plus_backup": "sphincs_plus_1762265103740709800",
+      "created_at": 1762265103
+    },
+    "quantum_1762254691398826700": {
+      "address": "quantum_1762254691398826700",
+      "kyber512_public_key": "kyber512_pk_1762254691398828900",
+      "dilithium2_signature": "dilithium2_sig_1762254691398829500",
+      "sphincs_plus_backup": "sphincs_plus_1762254691398830100",
+      "created_at": 1762254691
+    },
+    "quantum_1762255171742502100": {
+      "address": "quantum_1762255171742502100",
+      "kyber512_public_key": "kyber512_pk_1762255171742504400",
+      "dilithium2_signature": "dilithium2_sig_1762255171742505000",
+      "sphincs_plus_backup": "sphincs_plus_1762255171742505600",
+      "created_at": 1762255171
+    },
+    "quantum_1762255360520578900": {
+      "address": "quantum_1762255360520578900",
+      "kyber512_public_key": "kyber512_pk_1762255360520582400",
+      "dilithium2_signature": "dilithium2_sig_1762255360520583200",
+      "sphincs_plus_backup": "sphincs_plus_1762255360520583800",
+      "created_at": 1762255360
+    },
+    "quantum_1762255141447028100": {
+      "address": "quantum_1762255141447028100",
+      "kyber512_public_key": "kyber512_pk_1762255141447030300",
+      "dilithium2_signature": "dilithium2_sig_1762255141447030900",
+      "sphincs_plus_backup": "sphincs_plus_1762255141447031400",
+      "created_at": 1762255141
+    },
+    "quantum_1762255147855721400": {
+      "address": "quantum_1762255147855721400",
+      "kyber512_public_key": "kyber512_pk_1762255147855723600",
+      "dilithium2_signature": "dilithium2_sig_1762255147855724000",
+      "sphincs_plus_backup": "sphincs_plus_1762255147855724500",
+      "created_at": 1762255147
+    },
+    "quantum_1762255137541466200": {
+      "address": "quantum_1762255137541466200",
+      "kyber512_public_key": "kyber512_pk_1762255137541468300",
+      "dilithium2_signature": "dilithium2_sig_1762255137541468900",
+      "sphincs_plus_backup": "sphincs_plus_1762255137541469400",
+      "created_at": 1762255137
+    },
+    "quantum_1762255151854842900": {
+      "address": "quantum_1762255151854842900",
+      "kyber512_public_key": "kyber512_pk_1762255151854847700",
+      "dilithium2_signature": "dilithium2_sig_1762255151854848300",
+      "sphincs_plus_backup": "sphincs_plus_1762255151854850600",
+      "created_at": 1762255151
+    }
+  },
+  "ai_contracts": {},
+  "cross_chain_bridge": {
+    "supported_chains": [
+      {
+        "name": "Ethereum",
+        "chain_id": "1",
+        "bridge_address": "0x742E4C2F...",
+        "enabled": true
+      },
+      {
+        "name": "Binance Smart Chain",
+        "chain_id": "56",
+        "bridge_address": "0x3E5F...",
+        "enabled": true
+      },
+      {
+        "name": "Polygon",
+        "chain_id": "137",
+        "bridge_address": "0x8E7F...",
+        "enabled": true
+      }
+    ],
+    "liquidity_pools": {
+      "ETH-NOVA": 100000000000000,
+      "BSC-NOVA": 50000000000000
+    },
+    "bridge_fees": {
+      "percentage": 0.1,
+      "min_fee": 1000000,
+      "max_fee": 100000000
+    },
+    "total_volume": 0
+  },
+  "gaming_assets": {
+    "game_asset_1762255157890040100": {
+      "asset_id": "game_asset_1762255157890040100",
+      "owner": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255171749637900": {
+      "asset_id": "game_asset_1762255171749637900",
+      "owner": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255137548800300": {
+      "asset_id": "game_asset_1762255137548800300",
+      "owner": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762254691405182900": {
+      "asset_id": "game_asset_1762254691405182900",
+      "owner": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255409119063000": {
+      "asset_id": "game_asset_1762255409119063000",
+      "owner": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255147857776700": {
+      "asset_id": "game_asset_1762255147857776700",
+      "owner": "2RDufaEQqNag8JxACCofKHBkExKe",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255141454139300": {
+      "asset_id": "game_asset_1762255141454139300",
+      "owner": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762356998756083100": {
+      "asset_id": "game_asset_1762356998756083100",
+      "owner": "D3ASLD215nNVZqRcaGgwdASdU5V",
+      "game_id": "vexa_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255360522408800": {
+      "asset_id": "game_asset_1762255360522408800",
+      "owner": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762505962150897300": {
+      "asset_id": "game_asset_1762505962150897300",
+      "owner": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+      "game_id": "vexa_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762256567566577700": {
+      "asset_id": "game_asset_1762256567566577700",
+      "owner": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762265103742716100": {
+      "asset_id": "game_asset_1762265103742716100",
+      "owner": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255129704282000": {
+      "asset_id": "game_asset_1762255129704282000",
+      "owner": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    },
+    "game_asset_1762255151857084200": {
+      "asset_id": "game_asset_1762255151857084200",
+      "owner": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+      "game_id": "nova_rpg",
+      "metadata": "Legendary Sword",
+      "rarity": "Legendary",
+      "equipped": false
+    }
+  },
+  "metaverse_assets": {},
+  "defi_vaults": {
+    "defi_vault_1762356998757245200": {
+      "vault_id": "defi_vault_1762356998757245200",
+      "creator": "VexaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255137550190300": {
+      "vault_id": "defi_vault_1762255137550190300",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762256567567706200": {
+      "vault_id": "defi_vault_1762256567567706200",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762505962152167500": {
+      "vault_id": "defi_vault_1762505962152167500",
+      "creator": "VexaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255409119909900": {
+      "vault_id": "defi_vault_1762255409119909900",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762254691406275600": {
+      "vault_id": "defi_vault_1762254691406275600",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255129705285400": {
+      "vault_id": "defi_vault_1762255129705285400",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255157891269500": {
+      "vault_id": "defi_vault_1762255157891269500",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255151858212000": {
+      "vault_id": "defi_vault_1762255151858212000",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255141455280800": {
+      "vault_id": "defi_vault_1762255141455280800",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255147865041800": {
+      "vault_id": "defi_vault_1762255147865041800",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255171752092000": {
+      "vault_id": "defi_vault_1762255171752092000",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762265103743678200": {
+      "vault_id": "defi_vault_1762265103743678200",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1762255360523385900": {
+      "vault_id": "defi_vault_1762255360523385900",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 15.0,
+      "investors": {}
+    },
+    "defi_vault_1": {
+      "vault_id": "defi_vault_1",
+      "creator": "NovaFoundation",
+      "total_liquidity": 50000000000000,
+      "strategy": "Yield Farming",
+      "apr": 25.5,
+      "investors": {}
+    }
+  },
+  "enterprise_accounts": {},
+  "social_fi": {
+    "social_trading": {
+      "3BnBXMNLhPnkKuiNH7XdrU8FXe5": {
+        "address": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "213Q4sXLMSCzG8D9eWXyVuJSSFRm": {
+        "address": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "4BRsQHqQ6ptqub1kMwEkUW17ojhU": {
+        "address": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "2RDufaEQqNag8JxACCofKHBkExKe": {
+        "address": "2RDufaEQqNag8JxACCofKHBkExKe",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "2HXsTDLyYf7mEijerq1WeTYDbX64": {
+        "address": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "4ZraHf4z9Cy5sggER1WeaxTnfbMt": {
+        "address": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "D3ASLD215nNVZqRcaGgwdASdU5V": {
+        "address": "D3ASLD215nNVZqRcaGgwdASdU5V",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "2uUAfAbEQLYjszwp7CGMnPjA4QGj": {
+        "address": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "tVGTrwhBreAacRDkjPjDQnPQRxY": {
+        "address": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "SgKMmDe8BFatexcXAQYYKgpXc6X": {
+        "address": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "3JgBq79BzNDycvQRJEtTaT8nJeFa": {
+        "address": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "2DAVsruGWQ7iRq1UhqL88m1M6GEo": {
+        "address": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "37RUZRvKqn96fdqUoQ3ztgBkz4wN": {
+        "address": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      },
+      "2BpWTDLpvgfrHfAR27UWC8E6mVbp": {
+        "address": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+        "followers": [],
+        "performance": 0.0,
+        "copy_trading_enabled": true
+      }
+    },
+    "content_creators": {},
+    "decentralized_social": {}
+  },
+  "decentralized_identity": {
+    "did:nova:1762255141459274100": {
+      "did": "did:nova:1762255141459274100",
+      "owner": "3JgBq79BzNDycvQRJEtTaT8nJeFa",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255151861686900": {
+      "did": "did:nova:1762255151861686900",
+      "owner": "3BnBXMNLhPnkKuiNH7XdrU8FXe5",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255157893248700": {
+      "did": "did:nova:1762255157893248700",
+      "owner": "37RUZRvKqn96fdqUoQ3ztgBkz4wN",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762256567569716200": {
+      "did": "did:nova:1762256567569716200",
+      "owner": "tVGTrwhBreAacRDkjPjDQnPQRxY",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255137552302700": {
+      "did": "did:nova:1762255137552302700",
+      "owner": "2DAVsruGWQ7iRq1UhqL88m1M6GEo",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762265103745618500": {
+      "did": "did:nova:1762265103745618500",
+      "owner": "213Q4sXLMSCzG8D9eWXyVuJSSFRm",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:vexa:1762505962154272000": {
+      "did": "did:vexa:1762505962154272000",
+      "owner": "SgKMmDe8BFatexcXAQYYKgpXc6X",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255171754267800": {
+      "did": "did:nova:1762255171754267800",
+      "owner": "2BpWTDLpvgfrHfAR27UWC8E6mVbp",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255409121942000": {
+      "did": "did:nova:1762255409121942000",
+      "owner": "4BRsQHqQ6ptqub1kMwEkUW17ojhU",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255129707265800": {
+      "did": "did:nova:1762255129707265800",
+      "owner": "2uUAfAbEQLYjszwp7CGMnPjA4QGj",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255360525232100": {
+      "did": "did:nova:1762255360525232100",
+      "owner": "2HXsTDLyYf7mEijerq1WeTYDbX64",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762254691408284000": {
+      "did": "did:nova:1762254691408284000",
+      "owner": "4ZraHf4z9Cy5sggER1WeaxTnfbMt",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:nova:1762255147867451500": {
+      "did": "did:nova:1762255147867451500",
+      "owner": "2RDufaEQqNag8JxACCofKHBkExKe",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    },
+    "did:vexa:1762356998762902700": {
+      "did": "did:vexa:1762356998762902700",
+      "owner": "D3ASLD215nNVZqRcaGgwdASdU5V",
+      "soulbound_tokens": [],
+      "verifiable_credentials": [],
+      "reputation_score": 0.0
+    }
+  }
+}

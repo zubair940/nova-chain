@@ -1,0 +1,83 @@
+// Multi-signature 2-of-3 Wallet Contract
+contract MultiSig2of3 {
+    // Contract owners
+    owners: [address; 3] = [
+        "owner1_address_here",
+        "owner2_address_here", 
+        "owner3_address_here"
+    ],
+    
+    // Required signatures
+    required_signatures: uint = 2,
+    
+    // Pending transactions
+    pending_txs: map<string, Transaction> = {},
+    
+    // Transaction structure
+    struct Transaction {
+        to: address,
+        amount: uint,
+        signatures: [address],
+        executed: bool
+    }
+    
+    // Submit a new transaction
+    function submit_transaction(to: address, amount: uint) -> string {
+        let tx_id = generate_tx_id();
+        pending_txs[tx_id] = Transaction {
+            to: to,
+            amount: amount,
+            signatures: [],
+            executed: false
+        };
+        return tx_id;
+    }
+    
+    // Sign a pending transaction
+    function sign_transaction(tx_id: string) -> bool {
+        if (!pending_txs.contains(tx_id)) {
+            return false;
+        }
+        
+        let tx = pending_txs[tx_id];
+        if (tx.executed) {
+            return false;
+        }
+        
+        // Check if sender is an owner and hasn't signed yet
+        if (owners.contains(msg.sender) && !tx.signatures.contains(msg.sender)) {
+            tx.signatures.push(msg.sender);
+            
+            // Execute if enough signatures
+            if (tx.signatures.length >= required_signatures) {
+                execute_transaction(tx_id);
+            }
+            return true;
+        }
+        return false;
+    }
+    
+    // Execute the transaction
+    function execute_transaction(tx_id: string) private {
+        let tx = pending_txs[tx_id];
+        if (!tx.executed && tx.signatures.length >= required_signatures) {
+            // Transfer funds
+            transfer(tx.to, tx.amount);
+            tx.executed = true;
+        }
+    }
+    
+    // Get transaction status
+    function get_transaction_status(tx_id: string) -> (uint, bool) {
+        if (pending_txs.contains(tx_id)) {
+            let tx = pending_txs[tx_id];
+            return (tx.signatures.length, tx.executed);
+        }
+        return (0, false);
+    }
+    
+    // Generate unique transaction ID
+    function generate_tx_id() private -> string {
+        return sha256(now().toString() + msg.sender);
+    }
+}

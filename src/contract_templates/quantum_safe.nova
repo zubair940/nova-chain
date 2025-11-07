@@ -1,0 +1,338 @@
+// Quantum-Safe Cryptography Contract
+contract QuantumSafe {
+    // Quantum-resistant key pairs
+    quantum_keys: map<address, QuantumKeyPair> = {},
+    
+    // Multi-algorithm support
+    supported_algorithms: [string] = ["KYBER512", "DILITHIUM2", "SPHINCS+", "FALCON512"],
+    
+    // Security parameters
+    security_level: string = "QUANTUM_SAFE",
+    key_rotation_period: uint = 2592000, // 30 days in seconds
+    max_decryption_attempts: uint = 3,
+    
+    // Encrypted data storage
+    encrypted_data: map<string, EncryptedData> = {},
+    
+    // Quantum key pair structure
+    struct QuantumKeyPair {
+        public_key: string,
+        private_key_encrypted: string, // Encrypted with master key
+        algorithm: string,
+        created_at: uint,
+        last_rotated: uint,
+        is_active: bool
+    }
+    
+    // Encrypted data structure
+    struct EncryptedData {
+        data_id: string,
+        encrypted_content: string,
+        encryption_algorithm: string,
+        owner: address,
+        created_at: uint,
+        access_control: map<address, bool> // Who can decrypt
+    }
+    
+    // Failed decryption attempts
+    failed_attempts: map<address, uint> = {},
+    
+    // Initialize quantum-safe keys for user
+    function initialize_quantum_keys(algorithm: string) public -> bool {
+        require(supported_algorithms.contains(algorithm), "Unsupported algorithm");
+        require(!quantum_keys.contains(msg.sender), "Keys already initialized");
+        
+        // Generate quantum-safe key pair (simulated)
+        let key_pair = generate_quantum_key_pair(algorithm);
+        
+        quantum_keys[msg.sender] = QuantumKeyPair {
+            public_key: key_pair.public_key,
+            private_key_encrypted: encrypt_with_master(key_pair.private_key),
+            algorithm: algorithm,
+            created_at: now(),
+            last_rotated: now(),
+            is_active: true
+        };
+        
+        return true;
+    }
+    
+    // Rotate quantum keys (post-quantum security)
+    function rotate_quantum_keys(new_algorithm: string) public {
+        require(quantum_keys.contains(msg.sender), "Keys not initialized");
+        require(supported_algorithms.contains(new_algorithm), "Unsupported algorithm");
+        
+        let current_keys = quantum_keys[msg.sender];
+        require(now() - current_keys.last_rotated >= key_rotation_period, "Too soon to rotate");
+        
+        // Generate new key pair
+        let new_key_pair = generate_quantum_key_pair(new_algorithm);
+        
+        // Update keys
+        current_keys.public_key = new_key_pair.public_key;
+        current_keys.private_key_encrypted = encrypt_with_master(new_key_pair.private_key);
+        current_keys.algorithm = new_algorithm;
+        current_keys.last_rotated = now();
+        
+        // Re-encrypt all user data with new keys
+        reencrypt_user_data(msg.sender, new_key_pair);
+    }
+    
+    // Encrypt data with quantum-safe algorithm
+    function encrypt_data(data: string, allowed_decrypters: [address]) public -> string {
+        require(quantum_keys.contains(msg.sender), "Quantum keys not initialized");
+        
+        let data_id = generate_data_id(data);
+        let user_keys = quantum_keys[msg.sender];
+        
+        // Encrypt data with quantum-safe algorithm
+        let encrypted_content = quantum_encrypt(data, user_keys.public_key, user_keys.algorithm);
+        
+        // Set up access control
+        let access_map = map<address, bool>();
+        access_map[msg.sender] = true; // Owner can always decrypt
+        
+        for (let i = 0; i < allowed_decrypters.length; i++) {
+            access_map[allowed_decrypters[i]] = true;
+        }
+        
+        // Store encrypted data
+        encrypted_data[data_id] = EncryptedData {
+            data_id: data_id,
+            encrypted_content: encrypted_content,
+            encryption_algorithm: user_keys.algorithm,
+            owner: msg.sender,
+            created_at: now(),
+            access_control: access_map
+        };
+        
+        return data_id;
+    }
+    
+    // Decrypt quantum-safe encrypted data
+    function decrypt_data(data_id: string) public -> string {
+        require(encrypted_data.contains(data_id), "Data not found");
+        require(quantum_keys.contains(msg.sender), "Quantum keys not initialized");
+        
+        let data = encrypted_data[data_id];
+        require(data.access_control.contains(msg.sender) && data.access_control[msg.sender], "Access denied");
+        
+        // Check for brute force attempts
+        if (failed_attempts.contains(msg.sender) && failed_attempts[msg.sender] >= max_decryption_attempts) {
+            revert("Too many failed decryption attempts");
+        }
+        
+        let user_keys = quantum_keys[msg.sender];
+        
+        try {
+            // Attempt decryption
+            let decrypted_content = quantum_decrypt(
+                data.encrypted_content, 
+                user_keys.private_key_encrypted, 
+                data.encryption_algorithm
+            );
+            
+            // Reset failed attempts on success
+            failed_attempts[msg.sender] = 0;
+            
+            return decrypted_content;
+        } catch {
+            // Record failed attempt
+            failed_attempts[msg.sender] = failed_attempts.contains(msg.sender) ? 
+                failed_attempts[msg.sender] + 1 : 1;
+            
+            revert("Decryption failed");
+        }
+    }
+    
+    // Quantum-safe digital signature
+    function quantum_sign(message: string) public -> string {
+        require(quantum_keys.contains(msg.sender), "Quantum keys not initialized");
+        
+        let user_keys = quantum_keys[msg.sender];
+        let signature = quantum_signature(message, user_keys.private_key_encrypted, user_keys.algorithm);
+        
+        return signature;
+    }
+    
+    // Verify quantum-safe signature
+    function verify_quantum_signature(message: string, signature: string, signer: address) public -> bool {
+        require(quantum_keys.contains(signer), "Signer keys not initialized");
+        
+        let signer_keys = quantum_keys[signer];
+        let is_valid = quantum_verify(message, signature, signer_keys.public_key, signer_keys.algorithm);
+        
+        return is_valid;
+    }
+    
+    // Multi-algorithm fallback system
+    function migrate_to_new_algorithm(old_algorithm: string, new_algorithm: string) public {
+        require(supported_algorithms.contains(old_algorithm), "Invalid old algorithm");
+        require(supported_algorithms.contains(new_algorithm), "Invalid new algorithm");
+        require(quantum_keys.contains(msg.sender), "Keys not initialized");
+        
+        let user_keys = quantum_keys[msg.sender];
+        require(user_keys.algorithm == old_algorithm, "Not using specified old algorithm");
+        
+        // Generate new keys with updated algorithm
+        rotate_quantum_keys(new_algorithm);
+        
+        // Notify about migration
+        emit AlgorithmMigration(msg.sender, old_algorithm, new_algorithm, now());
+    }
+    
+    // Emergency key revocation
+    function emergency_revoke_keys() public {
+        require(quantum_keys.contains(msg.sender), "Keys not initialized");
+        
+        let user_keys = quantum_keys[msg.sender];
+        user_keys.is_active = false;
+        
+        // Securely wipe encrypted private key
+        user_keys.private_key_encrypted = "REVOKED_" + generate_random_hash();
+        
+        emit KeysRevoked(msg.sender, now());
+    }
+    
+    // Post-quantum secure random number generation
+    function quantum_random_number(min: uint, max: uint) public -> uint {
+        let entropy = generate_quantum_entropy();
+        let range = max - min + 1;
+        let random_value = (entropy % range) + min;
+        
+        return random_value;
+    }
+    
+    // Quantum key exchange (simulated)
+    function quantum_key_exchange(partner: address) public -> string {
+        require(quantum_keys.contains(msg.sender), "Your keys not initialized");
+        require(quantum_keys.contains(partner), "Partner keys not initialized");
+        
+        let your_keys = quantum_keys[msg.sender];
+        let partner_keys = quantum_keys[partner];
+        
+        // Simulate quantum key exchange
+        let shared_secret = perform_quantum_key_exchange(
+            your_keys.private_key_encrypted,
+            partner_keys.public_key,
+            your_keys.algorithm
+        );
+        
+        return shared_secret;
+    }
+    
+    // ==================== QUANTUM ALGORITHM IMPLEMENTATIONS ====================
+    
+    // Generate quantum-safe key pair (simulated)
+    function generate_quantum_key_pair(algorithm: string) private -> (string, string) {
+        // In real implementation, this would use actual quantum-safe algorithms
+        let public_key = "QPK_" + algorithm + "_" + generate_random_hash();
+        let private_key = "QSK_" + algorithm + "_" + generate_random_hash();
+        
+        return (public_key, private_key);
+    }
+    
+    // Quantum-safe encryption (simulated)
+    function quantum_encrypt(data: string, public_key: string, algorithm: string) private -> string {
+        // Simulated quantum encryption
+        return "QUANTUM_ENCRYPTED_" + algorithm + "_" + sha256(data + public_key);
+    }
+    
+    // Quantum-safe decryption (simulated)
+    function quantum_decrypt(encrypted_data: string, encrypted_private_key: string, algorithm: string) private -> string {
+        // Simulated quantum decryption
+        // In real implementation, this would decrypt using quantum-safe algorithms
+        if (encrypted_data.starts_with("QUANTUM_ENCRYPTED_")) {
+            return "Decrypted: " + encrypted_data;
+        }
+        revert("Decryption failed");
+    }
+    
+    // Quantum-safe signature (simulated)
+    function quantum_signature(message: string, encrypted_private_key: string, algorithm: string) private -> string {
+        return "QSIG_" + algorithm + "_" + sha256(message + encrypted_private_key);
+    }
+    
+    // Quantum signature verification (simulated)
+    function quantum_verify(message: string, signature: string, public_key: string, algorithm: string) private -> bool {
+        let expected_signature = "QSIG_" + algorithm + "_" + sha256(message + public_key);
+        return signature == expected_signature;
+    }
+    
+    // Quantum key exchange (simulated)
+    function perform_quantum_key_exchange(private_key: string, partner_public_key: string, algorithm: string) private -> string {
+        return "QSHARED_" + algorithm + "_" + sha256(private_key + partner_public_key);
+    }
+    
+    // Quantum entropy generation (simulated)
+    function generate_quantum_entropy() private -> uint {
+        return uint(sha256(now().toString() + msg.sender + generate_random_hash())) % 1000000;
+    }
+    
+    // ==================== UTILITY FUNCTIONS ====================
+    
+    function encrypt_with_master(data: string) private -> string {
+        // Encrypt with master key (simulated)
+        return "MASTER_ENCRYPTED_" + sha256(data);
+    }
+    
+    function reencrypt_user_data(user: address, new_key_pair: (string, string)) private {
+        // Re-encrypt all user's data with new keys
+        for (let data_id in encrypted_data) {
+            let data = encrypted_data[data_id];
+            if (data.owner == user && data.access_control.contains(user)) {
+                // In real implementation, decrypt with old keys and re-encrypt with new keys
+                data.encryption_algorithm = quantum_keys[user].algorithm;
+            }
+        }
+    }
+    
+    function generate_data_id(data: string) private -> string {
+        return "QDATA_" + sha256(data + now().toString() + msg.sender);
+    }
+    
+    function generate_random_hash() private -> string {
+        return sha256(now().toString() + msg.sender + random().toString());
+    }
+    
+    // Get user's quantum key info
+    function get_quantum_key_info(user: address) public -> (string, string, uint, bool) {
+        require(quantum_keys.contains(user), "User keys not initialized");
+        let keys = quantum_keys[user];
+        return (keys.public_key, keys.algorithm, keys.last_rotated, keys.is_active);
+    }
+    
+    // Get encryption algorithm security level
+    function get_algorithm_security(algorithm: string) public -> string {
+        if (algorithm == "KYBER512") return "QUANTUM_SAFE_128_BIT";
+        if (algorithm == "DILITHIUM2") return "QUANTUM_SAFE_128_BIT";
+        if (algorithm == "SPHINCS+") return "QUANTUM_SAFE_128_BIT";
+        if (algorithm == "FALCON512") return "QUANTUM_SAFE_128_BIT";
+        return "UNKNOWN";
+    }
+    
+    // Security audit function
+    function security_audit() public -> (string, uint, uint) {
+        let total_users = quantum_keys.length;
+        let active_users = 0;
+        let outdated_keys = 0;
+        
+        for (let user in quantum_keys) {
+            let keys = quantum_keys[user];
+            if (keys.is_active) {
+                active_users += 1;
+                if (now() - keys.last_rotated > key_rotation_period * 2) {
+                    outdated_keys += 1;
+                }
+            }
+        }
+        
+        let security_status = active_users > 0 ? "SECURE" : "NO_ACTIVE_USERS";
+        return (security_status, active_users, outdated_keys);
+    }
+    
+    // Events
+    event AlgorithmMigration(address indexed user, string old_algorithm, string new_algorithm, uint timestamp);
+    event KeysRevoked(address indexed user, uint timestamp);
+    event QuantumEncryption(address indexed user, string data_id, string algorithm, uint timestamp);
+}

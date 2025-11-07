@@ -1,21 +1,110 @@
 [package]
-name = "novachain-node"
+name = "vexachain-node"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# 💡 Core Dependencies (Basic building blocks)
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 sha2 = "0.10"
 hex = "0.4"
 tokio = { version = "1.0", features = ["full"] }
-warp = "0.3"
-lazy_static = "1.4"
 log = "0.4"
 env_logger = "0.10"
-rand = "0.8"
-base58 = "0.2"
-ed25519-dalek = "2.0"
-ring = "0.17.0"
-data-encoding = "2.4"        # ✅ ADD THIS - For BASE64 encoding
-getrandom = "0.2"           # ✅ ADD THIS - For random number generation
+chrono = { version = "0.4", features = ["serde"] }
+futures = "0.3"
+lazy_static = "1.4"
+
+# ✅ Required Dependencies
+warp = "0.3"        # For the API
+rand = "0.8"        # For key generation
+base58 = "0.2"      # For address encoding
+getrandom = "0.2"   # For rand
+
+# 🔐 Security & Cryptography
+ring = "0.17.0"     # For advanced cryptography
+aes = "0.8"         # For encryption
+rsa = { version = "0.9", optional = true }         # For RSA encryption (quantum resistance preparation)
+ed25519-dalek = "2.0" # For digital signatures
+k256 = "0.13"       # For secp256k1 (Ethereum compatibility)
+
+# 🌉 Network & Web3
+reqwest = { version = "0.11", features = ["json"] } # For HTTP requests (cross-chain bridge)
+web3 = "0.19"       # For Ethereum compatibility
+url = "2.4"         # For URL parsing
+
+# 🤖 AI & Machine Learning (OPTIONAL)
+tch = { version = "0.13", optional = true }        # PyTorch bindings for AI models
+smartcore = { version = "0.3", optional = true }   # Machine learning algorithms
+
+# 🎮 Gaming & Metaverse (OPTIONAL)
+gilrs = { version = "0.10", optional = true }      # Game input library
+rodio = { version = "0.17", optional = true }      # Audio processing
+
+# 💸 DeFi & Financial (OPTIONAL)
+num-bigint = { version = "0.4", optional = true }  # For large number calculations (flash loans)
+num-traits = { version = "0.2", optional = true }  # For numerical traits
+
+# 📊 Database & Storage (OPTIONAL)
+rocksdb = { version = "0.21", optional = true }    # High-performance database
+sled = { version = "0.34", optional = true }       # Embedded database
+
+# 🔧 Utility
+itertools = "0.12"  # Extra iterator adapters
+anyhow = "1.0"      # Error handling
+thiserror = "1.0"   # Custom error types
+uuid = { version = "1.0", features = ["v4"] } # For unique identifiers
+regex = "1.0"       # Regular expressions
+
+# 🌐 Async & Concurrency
+async-trait = "0.1" # For async traits
+rayon = "1.7"       # Parallel processing
+
+# 📈 Metrics & Monitoring (OPTIONAL)
+metrics = { version = "0.21", optional = true }    # Application metrics
+metrics-exporter-prometheus = { version = "0.13", optional = true } # Prometheus exporter
+
+# 🔄 Serialization
+bincode = "1.3"     # Binary serialization
+rmp-serde = "1.1"   # MessagePack serialization
+
+# 🛡️ Security Features
+zeroize = "1.6"     # Secure memory zeroing
+subtle = "2.5"      # Constant-time operations
+
+[dev-dependencies]
+tempfile = "3.3"
+criterion = "0.5"   # For benchmarking
+proptest = "1.2"    # For property testing
+
+[features]
+default = ["basic"]
+basic = ["staking", "dao", "bridge"]
+full = ["basic", "ai", "gaming", "metaverse", "defi", "layer2", "quantum", "enterprise"]
+staking = []
+dao = []
+bridge = []
+ai = ["dep:tch", "dep:smartcore"]
+gaming = ["dep:gilrs", "dep:rodio"]
+metaverse = []
+defi = ["dep:num-bigint", "dep:num-traits"]
+layer2 = []
+quantum = ["dep:rsa"]
+enterprise = ["dep:rocksdb", "dep:metrics", "dep:metrics-exporter-prometheus"]
+
+# 🔥 NEW FEATURES ADDED:
+# - AI/ML capabilities with PyTorch (optional)
+# - Gaming SDK with audio support (optional)
+# - Metaverse infrastructure
+# - DeFi flash loans & financial tools (optional)
+# - Layer 2 scaling solutions
+# - Quantum resistance preparation (optional)
+# - Enterprise-grade database & monitoring (optional)
+# - Cross-chain bridge with web3
+# - Enhanced security with multiple crypto algorithms
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
